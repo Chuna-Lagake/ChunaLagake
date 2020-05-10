@@ -37,7 +37,7 @@ body{
 
 }
 .register{
-	position: relative;
+	position: absolute;
 	background: #333;
 	padding: 40px;
 	width: 250px;
