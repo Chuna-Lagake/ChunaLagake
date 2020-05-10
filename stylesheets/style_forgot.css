@@ -1,0 +1,119 @@
+
+.main-content{
+	background: #333;
+	padding: 20px 0;
+	width: 60%;
+	margin: auto;
+	opacity: 0.6;
+}
+form {
+	margin:auto;
+}
+form h2{
+	color: #fff;
+	text-align: center;
+	font-size: 3em;
+}
+
+form p {
+	color: #fff;
+	font-size: 1.5em;
+	padding: 5px 10px;
+}
+
+form input{
+	width: 65%;
+	color: #fff;
+	text-align: center;
+	background: transparent;
+	border: none;
+	border-bottom: 1px solid #fff;
+	font-size: 1.5em;
+	margin-bottom: 10px;
+	margin-top: 10px;
+	padding: 10px;
+}
+
+form input:focus {
+	outline: none;
+}
+
+
+form button{
+	margin: 40px auto 20px;
+	width: 60%;
+	display: block;
+	outline: none;
+	padding: 10px 0;
+	border: 1px solid #fff;
+	background: transparent; 
+	color: #fff;
+	font-size: 1.2em;
+}
+
+form button:hover{
+	padding: 10px;
+	font-size: 1.6em;
+	transition: 0.3s;
+}
+
+form .copyright a{
+	font-size: 16px;
+	color: #fff;
+	text-align: center;
+}
+
+@media(min-width:1200px ) {
+
+	.main-content {
+		width: 500px;
+	}
+
+}
+
+@media(max-width:768px) {
+
+	.main-content form input{
+		font-size: 1.1em;
+	}
+
+	.main-content h2 {
+		font-size: 2em;
+	}
+
+	.main-content button {
+		margin-top: 20px;
+		width: 30%;
+	}
+
+}
+
+
+@media(max-width: 540px) {
+
+	.main-content {
+		width: 80%;
+	}
+
+	.forgot-credentials a {
+		font-size: 1em;
+	}
+
+	.message-box {
+		font-size: 1em;
+	}
+
+	.message-box a {
+		font-size: 1.2em;
+	}
+
+}
+
+@media(max-height:600px) {
+
+	.main-content h2 {
+		display: none;
+	}
+
+}
+

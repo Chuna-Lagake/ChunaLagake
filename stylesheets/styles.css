@@ -1,0 +1,53 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-family: Times New Roman;
+}
+
+
+body{
+	overflow: hidden;
+	background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),url(../images/background.jpg);
+	background-position: center;
+	background-size: cover;
+	height: 100vh;
+	background-repeat: no-repeat;
+}
+
+.navbar-header {
+	float: right;
+	padding-right: 10%;
+}
+
+.side li {
+	float: left;
+	list-style: none;
+	margin-top: 30px;
+}
+
+.side li a{
+	color: #fff;
+	text-decoration: none;
+	padding: 5px;
+	font-family: poppins;
+	font-size: 1.5em;
+}
+.side span {
+	margin-right: 8px;
+	margin-left: 15px;
+}
+
+.side a:hover {
+	background-color: #fff;
+  	border: none;
+  	padding: 10px 10px;
+  	margin: 4px 2px;
+  	opacity: 1;
+  	transition: 0.3s;
+  	color: black;
+}
+	
+#main-content {
+	margin-top: 150px;
+	text-align: center;
+}
