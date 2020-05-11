@@ -4,16 +4,15 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<title>Home</title>
+	<title>About</title>
 <!-- Include necessary css files here -->
 
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
 	<link rel="stylesheet" href="../stylesheets/styles.css">
 
-	<link rel="stylesheet" href="../stylesheets/mediaqueries.css">
+	<link rel="stylesheet" href="../stylesheets/style_about.css">
 
-	<link rel="stylesheet" href="../stylesheets/style_home.css">
 
 <!--Include Fonts -->
 </head>
@@ -24,7 +23,7 @@
 				<div class="side">
 					<ul>
 						<li>
-							<a href="home.html" class="active">
+							<a href="home.html">
 							<span class="glyphicon glyphicon-home"></span><span>Home</span>
 							</a>							
 						</li>
@@ -34,7 +33,8 @@
 							</a>							
 						</li>
 						<li>
-							<a href="about.html">
+							<a href="about.html"
+							class="active">
 							<span class="glyphicon glyphicon-info-sign"></span><span>About</span></a>
 						</li>
 						<li>
@@ -53,13 +53,40 @@
 		</div>		
 
 	</header>
+	<div id="main-content">
+		<div class="main-content">
+			<div class="slidershow middle">
+				<div class="slides">
+					<input type="radio" name="r" id="r1" checked="">
+					<input type="radio" name="r" id="r2">
+					<input type="radio" name="r" id="r3">
 
-	<div id="main-content" class="container text-center">
-		<h1>We are Chuna Lagake</h1>
-		<h2>We serve the Paan with Shaan</h2>
-		<a href="products.html"><h1>Buy Now</h1></a>
+					<div class="slide s1">
+						<img src="../images/chocolate-paan.jpg">
+					</div>
+					<div class="slide">
+						<img src="../images/meetha_paan.jpg">
+					</div>
+					<div class="slide">
+						<img src="../images/mawa_paan.jpg">
+					</div>
+				</div>
+				<div class="image-navigation">
+					<label for="r1" class="bar"></label>
+					<label for="r2" class="bar"></label>
+					<label for="r3" class="bar"></label>
+				</div>
+			</div>
+		</div>
+		<div class="main-content-1">
+			<h2>"The true joy in life is eating paan and enjoying bliss..."</h2>
+			<p id="socrates"> ~ Socrates</p>
+			<p class="description">
+				&nbsp&nbsp Our website brings to its Users a really unique perspective of delivering Paan and other non-tobacco products with the ease of a single button to your location.<br>
+				&nbsp&nbsp We also take exceptional pride in providing the most impeccable Customer Support and Service and providing with a vast range of assorted flavours of Paan, handcrafted by the most skilled and Paan makers in India, thus assuring you uncomparable quality and hygiene standards at the same time never compromising on our traditional flavours.
+				</p>
+		</div>
 	</div>
-
 	
 <!-- Necessary Java files -->
 	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

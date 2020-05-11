@@ -4,16 +4,16 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width,initial-scale=1">
-	<title>Home</title>
+	<title>Contact Us</title>
 <!-- Include necessary css files here -->
 
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
 	<link rel="stylesheet" href="../stylesheets/styles.css">
 
-	<link rel="stylesheet" href="../stylesheets/mediaqueries.css">
+	<link rel="stylesheet" href="../stylesheets/style_contact.css">
 
-	<link rel="stylesheet" href="../stylesheets/style_home.css">
+	<link rel="stylesheet" href="../stylesheets/mediaqueries.css">
 
 <!--Include Fonts -->
 </head>
@@ -24,7 +24,7 @@
 				<div class="side">
 					<ul>
 						<li>
-							<a href="home.html" class="active">
+							<a href="home.html">
 							<span class="glyphicon glyphicon-home"></span><span>Home</span>
 							</a>							
 						</li>
@@ -38,7 +38,7 @@
 							<span class="glyphicon glyphicon-info-sign"></span><span>About</span></a>
 						</li>
 						<li>
-							<a href="contact.html">
+							<a href="contact.html" class="active">
 							<span class="glyphicon glyphicon-phone"></span><span>Contact Us</span>
 							</a>							
 						</li>
@@ -54,18 +54,57 @@
 
 	</header>
 
-	<div id="main-content" class="container text-center">
-		<h1>We are Chuna Lagake</h1>
-		<h2>We serve the Paan with Shaan</h2>
-		<a href="products.html"><h1>Buy Now</h1></a>
+	<div id="main-content">
+		
+		<div id="contact" class="pull-left">
+			<form>
+				<div id="logo"></div>
+
+				<h2>Submit Feedback</h2>
+				<input type="text" name="name" placeholder="NAME">
+				<input type="text" name="email" placeholder="EMAIL ID">
+				<textarea name="feedback" placeholder="FEEDBACK"></textarea>
+				<input type="Submit" name="">
+			</form>
+		</div>
+
+		<div id="others" class="pull-left">
+			<div id="testimonials">
+				<h2>Customer Reviews</h2>
+				<p>
+					"Best Service Ever!!"
+				</p>
+				<p>
+					"Food quality is brilliant"
+				</p>
+				<p>
+					"Chuna Lagake is a great initiative. I am looking forward to enjoying paan more often"
+				</p>
+			</div>
+
+			<div id="footer" class="">
+				<ul>
+					<li>
+						<h3>Phone:</h3>
+						<span>9594998272</span><span>9930129844</span>
+					</li>
+					<li>
+						<h3>Email:</h3>
+						<span>info@gmail.com</span>
+					</li>
+				</ul>
+			</div>	
+		</div>
+
+		
 	</div>
 
-	
 <!-- Necessary Java files -->
 	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 	<script src="js/script.js"></script>
+
 
 </body>
 </html>

@@ -55,6 +55,12 @@ form button:hover{
 	font-size: 16px;
 	margin-bottom: 15px;
 }
+
+.forgot-password:hover, .forgot-username:hover {
+	text-decoration: underline;
+	color: #fff;
+}
+
 .message-box{
 	padding: 10px;
 	font-size: 1.2em;
@@ -75,6 +81,7 @@ form button:hover{
 	text-decoration: none;
 	color: #fff;
 }
+
 
 @media(min-width:1200px ) {
 
