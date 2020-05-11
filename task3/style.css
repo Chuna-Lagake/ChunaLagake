@@ -1,0 +1,185 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	background-image: url(download.jpg);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-color: #0e2421;
+	min-height: 100%;
+	overflow-x: hidden;
+}
+
+.nav-bar{
+	float: right;
+	padding-right: : 10%;
+}
+
+.nav-bar li{
+	float: left;
+	list-style: none;
+	margin-top: 20px;
+	padding: 10px;
+}
+.nav-bar li a{
+	color: #fff;
+	text-decoration: none;
+	padding: 5px;
+	font-size: 20px;
+	margin-left: 10px;
+	margin-right: 10px;
+	text-align: center;
+}
+.nav-bar li a:hover{
+	background: #fff;
+	color: #000;
+	padding: 10px 15px 10px 15px;
+	margin: 10px 10px;
+	transition: 0.3s;
+	font-size: 25px;
+
+}
+.main-content{
+	position: absolute;
+	background: transparent;
+	padding: 40px;
+	width: 800px;
+	margin: auto;
+	left: 20%;
+	top: 300px;
+}
+.slidershow {
+	width: 700px;
+	height: 400px;
+	overflow: hidden;
+}
+.middle {
+	position: absolute;
+	top: 10%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+.image-navigation {
+	position: absolute;
+	bottom: 20px;
+	left: 50%;
+	transform: translateX(-50%);
+	display: flex;
+}
+.bar {
+	width: 50px;
+	height: 10px;
+	border: 2px solid #085245;
+	margin: 6px;
+	cursor: pointer;
+}
+input[name="r"]{
+	position: absolute;
+	display: none;
+}
+
+.bar:hover {
+	background: #085245;
+	transition: 0.2s;
+}
+.slides {
+	width: 500%;
+	height: 100%;
+	display: flex;
+}
+.slide {
+	width: 20%;
+	transition: 0.6s;
+}
+.slide img {
+	width: 100%;
+	height: 100%;
+}
+#r1:checked ~ .s1{
+	margin-left: 0;
+}
+#r2:checked ~ .s1{
+	margin-left: -20%;
+}
+#r3:checked ~ .s1{
+	margin-left: -40%;
+}
+.main-content-1 {
+	position: absolute;
+	background: transparent;
+	padding: 40px;
+	width: 800px;
+	margin: auto;
+	left: 20%;
+	top: 500px;
+}
+.description {
+	font-size: 20px;
+	color: #fff;
+}
+.footer {
+	position: absolute;
+	background: #0e2421;
+	padding: 5px;
+	width: 100%;
+	margin: auto;
+	top: 100%;
+	height: 300px;
+}
+.footer .footer-content{
+	display: flex;
+	height: 278px;
+}
+.footer .footer-section{
+	flex: 1;
+}
+
+.map-link h1{
+	width: 100%;
+	text-align: center;
+	margin-top: 10px;
+	color: #fff;
+}
+.Map {
+	float: right;
+	align-content: center;
+	margin-top: 20px;
+	margin-right: 150px;
+}
+.footer .footer-bottom{
+	padding: 2px;
+	position: absolute;
+	text-align: center;
+	background-color: #0b1715;
+	height: 20px;
+	width: 100%;
+	bottom: 0px;
+	left: 0px;
+}
+.About{
+	color: #fff;
+	text-align: center;
+	text-decoration: none;
+}
+#details {
+	width: 50%;
+	font-size: 18px;
+	text-align: left;
+}
+#logo {
+	float: left;
+	margin-right: 50px;
+	display: inline-block;
+}
+
+.testimonials {
+	color: #fff;
+	text-align: center;
+	text-decoration: none;
+}
+.testimonials li {
+	font-size: 18px;
+	margin-top: 10px;
+	padding: 10px;
+}
