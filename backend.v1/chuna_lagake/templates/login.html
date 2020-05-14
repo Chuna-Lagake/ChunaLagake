@@ -1,0 +1,19 @@
+{% extends 'layout.html'%}
+{% set name='Login' %}
+{% set filename='style_login.css' %}
+{% block content %}
+		<div class="signin">
+			<form>
+				<h2>Log In</h2>
+				<input type="text" name="" placeholder="USERNAME"><br>
+				<input type="password" name="" placeholder="PASSWORD"><br>
+				<button>Login</button>
+			</form>
+			<div class="forgot-credentials">
+				<a href="/login/forgot password" class="forgot-password">Forgot Password?</a>
+				<p class="message-box">Not a Registered User?<a href="/login/signup">Sign Up</a></p>
+				<p id="copyright"><a href="#">&copy; ChunaLagake.com</a></p>
+			</div>
+		</div>	
+{% endblock content%}
+

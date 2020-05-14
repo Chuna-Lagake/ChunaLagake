@@ -1,0 +1,25 @@
+{% extends 'layout.html'%}
+{% set name='Signup' %}
+{% set filename='style_signup.css' %}
+{% block content %}
+		<div class="register">
+			<form>
+				<h2>Sign Up</h2>
+				<input type="email" name="" placeholder="EMAIL ID"><br>
+				<input type="text" name="" placeholder="USERNAME"><br>
+				<input type="password" name="" placeholder="PASSWORD"><br>
+				<input type="password" name="" placeholder="CONFIRM PASSWORD"><br>
+				
+				<div id="terms">
+					<span>Do you agree to our Terms and Conditions?</span>
+					<input type="checkbox" id="checkbox">
+				</div>
+				
+				<button>Register</button>
+			</form>
+			<div class="message-box">
+				<p class="Login-redirect"><a href="/login">Login to ChunaLagake</a></p>
+				<p  class="copyright"><a href="#">&copy; ChunaLagake.com</p></a>
+			</div>
+		</div>
+{% endblock content%}

@@ -1,0 +1,44 @@
+{% extends 'layout.html'%}
+{% set name='Contact' %}
+{% set filename='style_contact.css' %}
+{% block content %}
+		<div id="contact" class="pull-left">
+			<form>
+				<div id="logo"></div>
+
+				<h2>Submit Feedback</h2>
+				<input type="text" name="name" placeholder="NAME">
+				<input type="text" name="email" placeholder="EMAIL ID">
+				<textarea name="feedback" placeholder="FEEDBACK" ></textarea>
+				<input type="Submit" name="">
+			</form>
+		</div>
+
+		<div id="others" class="pull-left">
+			<div id="testimonials">
+				<h2>Customer Reviews</h2>
+				<p>
+					"Best Service Ever!!"
+				</p>
+				<p>
+					"Food quality is brilliant"
+				</p>
+				<p>
+					"Chuna Lagake is a great initiative. I am looking forward to enjoying paan more often"
+				</p>
+			</div>
+
+			<div id="footer" class="">
+				<ul>
+					<li>
+						<h3>Phone:</h3>
+						<span>9594998272</span><span>9930129844</span>
+					</li>
+					<li>
+						<h3>Email:</h3>
+						<span>info@gmail.com</span>
+					</li>
+				</ul>
+			</div>	
+		</div>
+{% endblock content%}
