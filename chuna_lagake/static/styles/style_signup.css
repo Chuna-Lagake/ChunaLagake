@@ -14,7 +14,7 @@ form h2{
 	text-align: center;
 	font-size: 3em;
 }
-form input{
+#username,#email, #password, #confirm_password {
 	width: 65%;
 	color: #fff;
 	text-align: center;
@@ -27,7 +27,7 @@ form input{
 	padding: 10px;
 }
 
-form input:focus {
+#username:focus,#email:focus, #password:focus, #confirm_password:focus {
 	outline: none;
 }
 
@@ -35,8 +35,23 @@ form div {
 	padding: 10px 2px;
 }
 
+form input::selection {
+    background-color: transparent;
+    color: #fff;
+}
 
-form button{
+.invalid-feedback {
+	padding: 0;
+	color: #fff;
+	font-style: bold;
+	font-size: 1em;
+}
+
+.is-invalid {
+}
+
+
+#submit{
 	margin: 40px auto 20px;
 	width: 60%;
 	display: block;
@@ -46,7 +61,7 @@ form button{
 	color: #fff;
 	font-size: 1.2em;
 }
-form button:hover{
+#submit:hover{
 	padding: 10px;
 	font-size: 1.6em;
 	transition: 0.3s;
@@ -103,7 +118,7 @@ form span {
 
 @media(max-width:768px) {
 
-	.register form input{
+	#username,#email, #password, #confirm_password {
 		font-size: 1.1em;
 	}
 
@@ -111,7 +126,7 @@ form span {
 		font-size: 2em;
 	}
 
-	.register button {
+	#submit {
 		margin-top: 20px;
 		width: 30%;
 	}
@@ -161,7 +176,7 @@ form span {
 		padding-bottom: 5px;
 	}
 	
-	.register form input {
+	#username,#email, #password, #confirm_password {
 		font-size: 1.1em;
 		padding: 5px;
 	}
@@ -171,7 +186,7 @@ form span {
 		margin-top: 10px;
 	}
 
-	.register button {
+	#submit {
 		margin-top: 10px;
 		margin-bottom: 10px;
 		width: 30%;

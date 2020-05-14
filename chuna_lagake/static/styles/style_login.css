@@ -15,7 +15,7 @@ form h2{
 	text-align: center;
 	font-size: 3em;
 }
-form input{
+#email, #password{
 	width: 65%;
 	color: #fff;
 	text-align: center;
@@ -28,11 +28,11 @@ form input{
 	padding: 10px;
 }
 
-form input:focus {
+#email:focus , #password:focus {
 	outline: none;
 }
 
-form button{
+#submit {
 	margin: 40px auto 20px;
 	width: 60%;
 	display: block;
@@ -42,7 +42,7 @@ form button{
 	color: #fff;
 	font-size: 1.2em;
 }
-form button:hover{
+#submit:hover{
 	padding: 10px;
 	font-size: 1.6em;
 	transition: 0.3s;
@@ -93,7 +93,7 @@ form button:hover{
 
 @media(max-width:768px) {
 
-	.signin form input{
+	#email, #password{
 		font-size: 1.1em;
 	}
 
@@ -101,7 +101,7 @@ form button:hover{
 		font-size: 2em;
 	}
 
-	.signin button {
+	#submit {
 		margin-top: 20px;
 		width: 30%;
 	}

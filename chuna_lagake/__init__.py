@@ -3,6 +3,7 @@ from flask_sqlalchemy import SQLAlchemy
 
 
 app = Flask(__name__)
+app.config['SECRET_KEY'] = 'c0e86bb97cf45f8f36c696128d94e3bd'
 
 ENV = 'development'
 

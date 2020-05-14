@@ -1,16 +1,23 @@
 from flask import render_template, request
+from flask import flash, redirect
 from chuna_lagake import app
 from chuna_lagake.models import *
+from chuna_lagake.forms import LoginForm, RegistrationForm, FeedbackForm
 
 
 
 @app.route('/')
-def index():
+def home():
 	return render_template('home.html')
 
-@app.route('/login')
+@app.route('/login',methods=['GET','POST'])
 def login():
-	return render_template('login.html')
+	form = LoginForm()
+	if form.validate_on_submit() :
+		if form.email.data == 'admin@blog.com' and form.password.data == 'password':
+			flash('Logged in!','success')
+			return redirect('/')
+	return render_template('login.html',form=form)
 
 @app.route('/products')
 def products():
@@ -22,13 +29,18 @@ def about():
 
 @app.route('/contact')
 def contact():
-	return render_template('contact.html')
+	form = FeedbackForm()
+	return render_template('contact.html',form=form)
 
 @app.route('/login/forgot password')
 def forgot_pass():
 	return render_template('forgot.html')
 
-@app.route('/login/signup')
+@app.route('/login/signup',methods=['GET','POST'] )
 def signup():
-	return render_template('signup.html')
+	form = RegistrationForm()
+	if form.validate_on_submit() :
+		flash(f'Account created for {form.username.data}!','success')
+		return redirect('/')
+	return render_template('signup.html',form=form)
 

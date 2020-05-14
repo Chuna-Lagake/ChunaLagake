@@ -3,19 +3,61 @@
 {% set filename='style_signup.css' %}
 {% block content %}
 		<div class="register">
-			<form>
+			<form method="POST" action="" autocomplete="off">
+				{{form.hidden_tag()}}
 				<h2>Sign Up</h2>
-				<input type="email" name="" placeholder="EMAIL ID"><br>
-				<input type="text" name="" placeholder="USERNAME"><br>
-				<input type="password" name="" placeholder="PASSWORD"><br>
-				<input type="password" name="" placeholder="CONFIRM PASSWORD"><br>
+
+				
+				{% if form.username.errors %}
+					{{form.username(placeholder="Username" ,class="is-invalid")}}<br>
+					<div class="invalid-feedback">
+						{% for error in form.username.errors %}
+							<span>{{error}}</span>
+						{% endfor %}
+					</div>
+				{% else %}
+					{{form.username(placeholder="Username")}}<br>
+				{% endif %}
+				
+				{% if form.email.errors %}
+					{{form.email(placeholder="Email Id" ,class="is-invalid")}}<br>
+					<div class="invalid-feedback">
+						{% for error in form.email.errors %}
+							<span>{{error}}</span>
+						{% endfor %}
+					</div>
+				{% else %}
+					{{form.email(placeholder="Email Id")}}<br>
+				{% endif %}
+
+				{% if form.password.errors %}
+					{{form.password(placeholder="Password", class="is-invalid")}}<br>
+					<div class="invalid-feedback">
+						{% for error in form.password.errors %}
+							<span>{{error}}</span>
+						{% endfor %}
+					</div>
+				{% else %}
+					{{form.password(placeholder="Password")}}<br>
+				{% endif %}
+	
+				{% if form.confirm_password.errors %}
+					{{form.confirm_password(placeholder="Confirm Password", class="is-invalid")}}<br>
+					<div class="invalid-feedback">
+						{% for error in form.confirm_password.errors %}
+							<span>{{error}}</span>
+						{% endfor %}
+					</div>
+				{% else %}
+					{{form.confirm_password(placeholder="Confirm Password")}}<br>
+				{% endif %}
 				
 				<div id="terms">
 					<span>Do you agree to our Terms and Conditions?</span>
 					<input type="checkbox" id="checkbox">
 				</div>
-				
-				<button>Register</button>
+				{{form.submit}}
+
 			</form>
 			<div class="message-box">
 				<p class="Login-redirect"><a href="/login">Login to ChunaLagake</a></p>

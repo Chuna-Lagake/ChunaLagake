@@ -3,11 +3,13 @@
 {% set filename='style_login.css' %}
 {% block content %}
 		<div class="signin">
-			<form>
+			<form method="POST" action="" autocomplete="off">
+				{{form.hidden_tag()}}
 				<h2>Log In</h2>
-				<input type="text" name="" placeholder="USERNAME"><br>
-				<input type="password" name="" placeholder="PASSWORD"><br>
-				<button>Login</button>
+				{{form.email(placeholder="Email Id")}}<br>
+				{{form.password(placeholder="Password")}}<br>
+				{{form.submit}}
+
 			</form>
 			<div class="forgot-credentials">
 				<a href="/login/forgot password" class="forgot-password">Forgot Password?</a>

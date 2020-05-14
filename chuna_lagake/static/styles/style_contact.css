@@ -64,12 +64,12 @@ form input:focus , form textarea:focus{
 	outline: none;
 }
 
-form input:nth-child(6){
+#submit {
 	border:1px #fff solid;
 	width: 30%;
 }
 
-form input:nth-child(6):hover{
+#submit:hover{
   	padding: 10px 10px;
   	transition: 0.3s;
 }
@@ -154,9 +154,6 @@ form input:nth-child(6):hover{
 
 	}
 
-	#footer li {
-	}
-
 	#footer span {
 		font-size: 0.8em;
 	}
@@ -165,7 +162,7 @@ form input:nth-child(6):hover{
 		font-size: 1.2em;
 	}
 
-	form input:nth-child(6) {
+	#submit {
 		width: 85px;
 	}
 

@@ -3,14 +3,14 @@
 {% set filename='style_contact.css' %}
 {% block content %}
 		<div id="contact" class="pull-left">
-			<form>
-				<div id="logo"></div>
-
+			<form method="POST" action="" autocomplete="off">
 				<h2>Submit Feedback</h2>
-				<input type="text" name="name" placeholder="NAME">
-				<input type="text" name="email" placeholder="EMAIL ID">
-				<textarea name="feedback" placeholder="FEEDBACK" ></textarea>
-				<input type="Submit" name="">
+				{{form.hidden_tag()}}
+				{{form.username(placeholder="Username")}}
+				{{form.email(placeholder="Email Id")}}
+				{{form.feedback(placeholder="Feedback")}}
+				{{form.submit}}
+
 			</form>
 		</div>
 
