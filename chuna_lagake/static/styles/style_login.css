@@ -7,6 +7,11 @@
 	opacity: 0.6;
 }
 
+.alert {
+	padding: 2px;
+	margin-bottom: 0;
+}
+
 form{
 	margin: auto;
 }
@@ -155,4 +160,11 @@ form h2{
 		display: none;
 	}
 
+}
+
+@media(max-width:550px) {
+	.alert {
+		font-size: 0.8em;
+		margin-bottom: -5px;
+	}
 }

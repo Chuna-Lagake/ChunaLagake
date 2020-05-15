@@ -1,7 +1,7 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField , PasswordField, SubmitField, BooleanField, TextAreaField
-from wtforms.validators import DataRequired, Length, Email, EqualTo
-
+from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
+from chuna_lagake.models import User
 
 
 class RegistrationForm(FlaskForm):
@@ -11,6 +11,16 @@ class RegistrationForm(FlaskForm):
     confirm_password = PasswordField('Confirm Password',validators=[DataRequired(),EqualTo('password')])
     tnc = BooleanField('Do you agree to our Terms and Conditions?')
     submit = SubmitField('Sign Up')
+
+    def validate_username(self, username):
+        user = User.query.filter_by(username = username.data).first()
+        if user:
+            raise ValidationError('Username already in use')
+    
+    def validate_email(self, email):
+        user = User.query.filter_by(email = email.data).first()
+        if user:
+            raise ValidationError('Email already in use')
 
 class LoginForm(FlaskForm):
     email = StringField('Email', validators=[DataRequired(),Email()])

@@ -2,6 +2,9 @@
 {% set name='Home' %}
 {% set filename='style_home.css' %}
 {% block content %}
+	{% if current_user.is_authenticated %}
+		<h2>Hello <b style="color: #fff;">{{current_user.username}}</b></h2>
+	{% endif %}
 	<h1>We are Chuna Lagake</h1>
 	<h2>We serve the Paan with Shaan</h2>
 	<a href="/products"><h1>Buy Now</h1></a>

@@ -6,11 +6,49 @@
 			<form method="POST" action="" autocomplete="off">
 				<h2>Submit Feedback</h2>
 				{{form.hidden_tag()}}
-				{{form.username(placeholder="Username")}}
-				{{form.email(placeholder="Email Id")}}
-				{{form.feedback(placeholder="Feedback")}}
-				{{form.submit}}
+				{% with messages = get_flashed_messages(with_categories=true) %}
+				{% if messages %}
+				{% for category, message in messages %}
+					<div class="alert alert-{{category}}">	
+						{{message}}
+					</div>
+				{% endfor %}
+				{% endif %}
+				{% endwith %}
 
+				{% if form.username.errors %}
+					{{form.username(placeholder="Username" ,class="is-invalid")}}
+					<div class="invalid-feedback">
+						{% for error in form.username.errors %}
+							<span>{{error}}</span>
+						{% endfor %}
+					</div>
+				{% else %}
+				{{form.username(placeholder="Username")}}
+				{% endif %}
+
+				{% if form.email.errors %}
+					{{form.email(placeholder="Email Id" ,class="is-invalid")}}
+					<div class="invalid-feedback">
+						{% for error in form.email.errors %}
+							<span>{{error}}</span>
+						{% endfor %}
+					</div>
+				{% else %}
+				{{form.email(placeholder="Email Id")}}
+				{% endif %}
+				
+				{% if form.feedback.errors %}
+					{{form.feedback(placeholder="Feedback", class="is-invalid")}}
+					<div class="invalid-feedback">
+						{% for error in form.feedback.errors %}
+							<span>{{error}}</span>
+						{% endfor %}
+					</div>
+				{% else %}
+				{{form.feedback(placeholder="Feedback")}}
+				{% endif %}
+				{{form.submit}}
 			</form>
 		</div>
 

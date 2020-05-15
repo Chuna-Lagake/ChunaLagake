@@ -2,10 +2,21 @@
 {% set name='Login' %}
 {% set filename='style_login.css' %}
 {% block content %}
+
 		<div class="signin">
 			<form method="POST" action="" autocomplete="off">
 				{{form.hidden_tag()}}
 				<h2>Log In</h2>
+				{% with messages = get_flashed_messages(with_categories=true) %}
+				{% if messages %}
+				{% for category, message in messages %}
+					<div class="alert alert-{{category}}">	
+						{{message}}
+					</div>
+				{% endfor %}
+				{% endif %}
+				{% endwith %}
+				
 				{% if form.email.errors %}
 					{{form.email(placeholder="Email Id" ,class="is-invalid")}}<br>
 					<div class="invalid-feedback">

@@ -1,7 +1,3 @@
-
-#main-content {
-}
-
 #contact, #others {
 	background-color: #333;
 	margin: 5px;
@@ -11,6 +7,12 @@
 	opacity: 0.6;
 }
 
+.alert {
+	padding: 2px;
+	margin-bottom: -5px;
+	margin-top: -5px
+	;
+}
 
 form h2, #others h2  {
 	color: #fff;
@@ -74,6 +76,17 @@ form input:focus , form textarea:focus{
   	transition: 0.3s;
 }
 
+.invalid-feedback {
+	margin-top: -10px;
+	margin-bottom: -10px;
+}
+
+.invalid-feedback span {
+	color: tomato;
+	font-style: bold italic;
+	font-size: 1em;
+}
+
 #contact {
 	margin-left: 20%;
 }
@@ -110,7 +123,9 @@ form input:focus , form textarea:focus{
 
 @media(max-width: 1150px) {
 	form h2, #others h2 {
-		font-size: 2em;
+		font-size: 1.8em;
+		margin-top: 15px;
+		margin-bottom: 15px;
 	}
 
 	#footer h3 {
@@ -126,7 +141,7 @@ form input:focus , form textarea:focus{
 		width: 40%;
 		margin: 5px;
 		height: 360px;
-		padding: 15px 8px; 
+		padding: 8px 8px; 
 	}
 
 	#contact {
@@ -177,6 +192,12 @@ form input:focus , form textarea:focus{
 		margin-left: 12.5%;
 		height: 280px;
 		margin-bottom: 10px; 
+		padding: 0;
+	}
+
+	#submit {
+		font-size: 1.2em;
+		margin-top: -5px;
 	}
 
 }
@@ -207,5 +228,12 @@ form input:focus , form textarea:focus{
 
 	body #main-content {
 		margin-top: 30px;
+	}
+}
+
+@media(max-width:550px) {
+	.alert {
+		font-size: 0.8em;
+		margin-bottom: -5px;
 	}
 }
