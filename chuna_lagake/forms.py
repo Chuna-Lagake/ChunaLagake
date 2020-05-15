@@ -9,6 +9,7 @@ class RegistrationForm(FlaskForm):
     email = StringField('Email', validators=[DataRequired(),Email()])
     password = PasswordField('Password', validators=[DataRequired()])
     confirm_password = PasswordField('Confirm Password',validators=[DataRequired(),EqualTo('password')])
+    tnc = BooleanField('Do you agree to our Terms and Conditions?')
     submit = SubmitField('Sign Up')
 
 class LoginForm(FlaskForm):

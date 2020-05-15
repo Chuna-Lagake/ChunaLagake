@@ -33,7 +33,7 @@ form h2{
 }
 
 #submit {
-	margin: 40px auto 20px;
+	margin: 20px auto 20px;
 	width: 60%;
 	display: block;
 	padding: 10px 0;
@@ -47,6 +47,18 @@ form h2{
 	font-size: 1.6em;
 	transition: 0.3s;
 
+}
+
+.invalid-feedback span {
+	color: tomato;
+	font-style: bold italic;
+	font-size: 1em;
+}
+
+.form-check-label {
+	color: #fff;
+	margin: 0;
+	margin-top: 5px;
 }
 
 .forgot-password, .forgot-username{

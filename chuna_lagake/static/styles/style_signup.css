@@ -35,20 +35,16 @@ form div {
 	padding: 10px 2px;
 }
 
-form input::selection {
-    background-color: transparent;
-    color: #fff;
-}
-
-.invalid-feedback {
-	padding: 0;
-	color: #fff;
-	font-style: bold;
+.invalid-feedback span {
+	color: tomato;
+	font-style: bold italic;
 	font-size: 1em;
 }
 
-.is-invalid {
+.invalid-feedback{
+	padding: 0;
 }
+
 
 
 #submit{
@@ -68,19 +64,17 @@ form input::selection {
 
 }
 
-form span {
+form label {
 	color: #fff;
-	font-size: 1.2em;
+	font-size: 1.4em;
 }
 
 #terms {
 	margin-top:  10px;
 }
 
-#checkbox {
+#terms input {
 	margin-left: 10px;
-	width: 16px;
-	height: 16px;
 	display: inline;
 }
 
@@ -204,7 +198,10 @@ form span {
 	.Login-redirect {
 		margin-bottom: 5px;
 	}
-
+	
+	#terms label {
+		font-size: 0.8em;
+	}
 }
 
 
@@ -213,4 +210,5 @@ form span {
 	.register h2 {
 		display: none;
 	}
+
 }

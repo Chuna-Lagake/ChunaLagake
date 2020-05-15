@@ -1,7 +1,6 @@
-from flask import render_template, request
-from flask import flash, redirect
+from flask import render_template, request, flash, redirect
 from chuna_lagake import app
-from chuna_lagake.models import *
+from chuna_lagake.models import User, Feedback, Menu, Entry
 from chuna_lagake.forms import LoginForm, RegistrationForm, FeedbackForm
 
 

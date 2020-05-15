@@ -53,8 +53,8 @@
 				{% endif %}
 				
 				<div id="terms">
-					<span>Do you agree to our Terms and Conditions?</span>
-					<input type="checkbox" id="checkbox">
+						{{form.tnc(class="form-check-input")}}
+						{{form.tnc.label(class="form-check-label")}}
 				</div>
 				{{form.submit}}
 
