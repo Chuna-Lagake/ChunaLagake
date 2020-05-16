@@ -1,7 +1,9 @@
 
 {% extends 'layout.html'%}
 {% set name='About' %}
-{% set filename='style_about.css' %}
+{% block link %}
+	<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style_about.css') }}">
+{% endblock %}
 {% block content %}
 		<div class="main-content">
 			<div class="slidershow middle">
@@ -11,13 +13,13 @@
 					<input type="radio" name="r" id="r3">
 
 					<div class="slide s1">
-						<img src="../static/images/chocolate-paan.jpg">
+						<img src="{{ url_for('static',filename='images/chocolate-paan.jpg') }}">
 					</div>
 					<div class="slide">
-						<img src="../static/images/meetha_paan.jpg">
+						<img src="{{ url_for('static',filename='images/meetha_paan.jpg') }}">
 					</div>
 					<div class="slide">
-						<img src="../static/images/mawa_paan.jpg">
+						<img src="{{ url_for('static',filename='images/mawa_paan.jpg') }}">
 					</div>
 				</div>
 				<div class="image-navigation">

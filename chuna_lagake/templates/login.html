@@ -1,6 +1,8 @@
 {% extends 'layout.html'%}
 {% set name='Login' %}
-{% set filename='style_login.css' %}
+{% block link %}
+	<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style_login.css') }}">
+{% endblock %}
 {% block content %}
 
 		<div class="signin">
@@ -48,8 +50,8 @@
 
 			</form>
 			<div class="forgot-credentials">
-				<a href="/login/forgot password" class="forgot-password">Forgot Password?</a>
-				<p class="message-box">Not a Registered User?<a href="/login/signup">Sign Up</a></p>
+				<a href="{{url_for('forgot_pass')}}" class="forgot-password">Forgot Password?</a>
+				<p class="message-box">Not a Registered User?<a href="{{url_for('signup')}}">Sign Up</a></p>
 				<p id="copyright"><a href="#">&copy; ChunaLagake.com</a></p>
 			</div>
 		</div>	

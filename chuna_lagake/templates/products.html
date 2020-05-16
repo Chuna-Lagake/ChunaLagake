@@ -1,6 +1,8 @@
 {% extends 'layout.html'%}
 {% set name='Products' %}
-{% set filename='style_products.css' %}
+{% block link %}
+	<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style_products.css') }}">
+{% endblock %}
 {% block content %}
 		<h2>Under Construction</h2>
 {% endblock content%}

@@ -1,6 +1,8 @@
 {% extends 'layout.html'%}
 {% set name='Signup' %}
-{% set filename='style_signup.css' %}
+{% block link %}
+	<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style_signup.css') }}">
+{% endblock %}
 {% block content %}
 		<div class="register">
 			<form method="POST" action="" autocomplete="off">
@@ -60,7 +62,7 @@
 
 			</form>
 			<div class="message-box">
-				<p class="Login-redirect"><a href="/login">Login to ChunaLagake</a></p>
+				<p class="Login-redirect"><a href="{{url_for('login')}}">Login to ChunaLagake</a></p>
 				<p  class="copyright"><a href="#">&copy; ChunaLagake.com</p></a>
 			</div>
 		</div>

@@ -1,13 +1,38 @@
 {% extends 'layout.html'%}
-{% set name='Forgot Password' %}
+{% block link %}
+	<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style_forgot.css') }}">
+{% endblock %}
 {% set filename='style_forgot.css' %}
 {% block content %}
 			<div class="main-content">
-			<form>
+			<form action="" method="POST" autocomplete="off">
+				{{form.hidden_tag()}}
 				<h2>Forgot Your Password Eh?</h2>
-				<p>Enter your registered email address and we will send you a reset</p>
-				<input type="email" name="" placeholder="REGISTERED EMAIL ID">
-				<button>Request</button>
+				{% with messages = get_flashed_messages(with_categories=true) %}
+				{% if messages %}
+				{% for category, message in messages %}
+					<div class="alert alert-{{category}}">	
+						{{message}}
+					</div>
+				{% endfor %}
+				{% endif %}
+				{% endwith %}
+				
+				<p>Enter your registered email address and we will send you a reset link</p>
+
+				{% if form.email.errors %}
+					{{form.email(placeholder="Registered Email Id" ,class="is-invalid")}}
+					<div class="invalid-feedback">
+						{% for error in form.email.errors %}
+							<span>{{error}}</span>
+						{% endfor %}
+					</div>
+				{% else %}
+				{{form.email(placeholder="Registered Email Id")}}
+				{% endif %}
+
+				{{form.submit}}
+
 				<p class="copyright"><a href="#">&copy; ChunaLagake.com</a></p>
 			</form>
 		</div>

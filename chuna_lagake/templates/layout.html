@@ -13,8 +13,8 @@
 
 	<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/mediaqueries.css') }}">
 
-	<link rel= "stylesheet" type= "text/css" href= "../static/styles/{{filename}}" )>
-
+	{% block link %}
+	{% endblock %}
 
 <!--Include Fonts -->
 </head>
@@ -25,31 +25,31 @@
 				<div class="side">
 					<ul>
 						<li>
-							<a href="/">
+							<a href="{{url_for('home')}}">
 							<span class="glyphicon glyphicon-home"></span><span>Home</span>
 							</a>							
 						</li>
 						<li>
-							<a href="/products">
+							<a href="{{url_for('products')}}">
 							<span class="glyphicon glyphicon-cutlery"></span><span>Products</span>
 							</a>							
 						</li>
 						<li>
-							<a href="/about">
+							<a href="{{url_for('about')}}">
 							<span class="glyphicon glyphicon-info-sign"></span><span>About</span></a>
 						</li>
 						<li>
-							<a href="/contact">
+							<a href="{{url_for('contact')}}">
 							<span class="glyphicon glyphicon-phone"></span><span>Contact Us</span>
 							</a>							
 						</li>
 						<li>
 							{% if current_user.is_authenticated %}
-								<a href="/logout">
+								<a href="{{url_for('logout')}}">
 								<span class="glyphicon glyphicon-log-out"></span><span>Logout</span>
 								</a>
 							{% else %}
-								<a href="/login">
+								<a href="{{url_for('login')}}">
 								<span class="glyphicon glyphicon-log-in"></span><span>Login</span>
 								</a>
 							{% endif %}

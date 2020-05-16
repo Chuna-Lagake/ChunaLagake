@@ -1,0 +1,41 @@
+{% extends 'layout.html'%}
+{% set name='Reset Password' %}
+{% block link %}
+	<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style_reset.css') }}">
+{% endblock %}
+{% block content %}
+			<div class="main-content">
+			<form method="POST" action="" autocomplete="off">
+                <h2>Reset your Password</h2>
+				{{form.hidden_tag()}}
+
+                {% if form.password.errors %}
+					{{form.password(placeholder="Password", class="is-invalid")}}<br>
+					<div class="invalid-feedback">
+						{% for error in form.password.errors %}
+							<span>{{error}}</span>
+						{% endfor %}
+					</div>
+				{% else %}
+					{{form.password(placeholder="Password")}}<br>
+				{% endif %}
+	
+				{% if form.confirm_password.errors %}
+					{{form.confirm_password(placeholder="Confirm Password", class="is-invalid")}}<br>
+					<div class="invalid-feedback">
+						{% for error in form.confirm_password.errors %}
+							<span>{{error}}</span>
+						{% endfor %}
+					</div>
+				{% else %}
+					{{form.confirm_password(placeholder="Confirm Password")}}<br>
+				{% endif %}
+
+
+
+				{{form.submit}}
+
+				<p class="copyright"><a href="#">&copy; ChunaLagake.com</a></p>
+			</form>
+		</div>
+{% endblock content%}
