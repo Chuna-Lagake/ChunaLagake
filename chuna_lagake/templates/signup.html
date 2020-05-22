@@ -54,10 +54,23 @@
 					{{form.confirm_password(placeholder="Confirm Password")}}<br>
 				{% endif %}
 				
-				<div id="terms">
+				{% if form.tnc.errors %}
+					<div id="terms">
 						{{form.tnc(class="form-check-input")}}
 						{{form.tnc.label(class="form-check-label")}}
-				</div>
+					</div>					
+					<div class="invalid-feedback tnc">
+						{% for error in form.tnc.errors %}
+							<span>{{error}}</span>
+						{% endfor %}
+					</div>
+				{% else %}
+					<div id="terms">
+						{{form.tnc(class="form-check-input")}}
+						{{form.tnc.label(class="form-check-label")}}
+					</div>
+				{% endif %}
+
 				{{form.submit}}
 
 			</form>

@@ -78,6 +78,10 @@ form label {
 	display: inline;
 }
 
+.tnc {
+	margin-bottom: -15px;
+}
+
 .message-box{
 	text-align: center;
 }
@@ -201,6 +205,10 @@ form label {
 	
 	#terms label {
 		font-size: 0.8em;
+	}
+
+	.tnc {
+		margin-bottom: -5px;
 	}
 }
 

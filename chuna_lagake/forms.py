@@ -22,12 +22,15 @@ class RegistrationForm(FlaskForm):
         if user:
             raise ValidationError('Email already in use')
 
+    def validate_tnc(self, tnc):
+        if tnc.data==False:
+            raise ValidationError('Terms and conditions not accepted')
+
 class LoginForm(FlaskForm):
     email = StringField('Email', validators=[DataRequired(),Email()])
     password = PasswordField('Password', validators=[DataRequired()])
     remember = BooleanField('Remember Me')
     submit = SubmitField('Login')
-
 
 class FeedbackForm(FlaskForm):
     username = StringField('Name', validators=[DataRequired(), Length(min=2, max=20)])
@@ -52,4 +55,3 @@ class ResetPasswordForm(FlaskForm):
     password = PasswordField('Password', validators=[DataRequired()])
     confirm_password = PasswordField('Confirm Password',validators=[DataRequired(),EqualTo('password')])
     submit = SubmitField('Reset')
-   
