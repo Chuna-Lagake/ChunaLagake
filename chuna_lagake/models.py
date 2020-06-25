@@ -13,7 +13,7 @@ class User(db.Model, UserMixin):
 	password = db.Column(db.String(256), nullable=False)
 	email = db.Column(db.String(100), nullable=False, unique=True)
 	feedbacks = db.relationship('Feedback', backref='user',lazy=True)
-
+	ratings = db.relationship('Ratings', backref='user', lazy=True)
 	def get_reset_token(self, expires_sec=1800):
 		s = Serializer(app.config['SECRET_KEY'], expires_sec)
 		return s.dumps({'user_id': self.id}).decode('utf-8')
@@ -43,6 +43,8 @@ class Menu(db.Model):
 	name = db.Column(db.String(100), nullable=False, unique=True)
 	description = db.Column(db.Text, nullable=False)
 	_features = db.Column(db.String(), default='0.0', nullable=False)
+	ratings = db.relationship('Ratings', backref='item', lazy=True)
+	
 	@property
 	def features(self):
 		return [float(x) for x in self._features.split(';')]
@@ -52,4 +54,13 @@ class Menu(db.Model):
 		self._features += ';%s' % value
 
 	def __repr__ (self):
-		return f"Item('{self.name}','{self.description}','{self.image}')"	
+		return f"Item('{self.name}')"
+
+class Ratings(db.Model):
+	id = db.Column(db.Integer, primary_key=True)
+	user_id = db.Column(db.Integer, db.ForeignKey('user.id'),nullable=False)
+	item_id = db.Column(db.Integer, db.ForeignKey('menu.id'),nullable=False)	
+	rating = db.Column(db.Float, default=0)
+
+	def __repr__ (self):
+		return f"Entry('{self.user}','{self.item}','{self.rating}')"
