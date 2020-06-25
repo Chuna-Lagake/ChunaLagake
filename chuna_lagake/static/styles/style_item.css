@@ -1,0 +1,230 @@
+body {
+	background: #182628;
+	color: #f2f2f2;
+}
+
+.alert {
+	padding: 2px;
+	margin-bottom: 0;
+}
+
+
+#card {
+    width: 50%;
+    margin: auto;
+}
+
+img {
+    float: left;
+    width: 40%;
+    height: 350px;
+    border: aqua solid 8px;
+    border-right: 0;
+
+}
+
+#text {
+    background-color: aqua;
+    color: #182628;
+    float: left;
+    text-align: center;
+    width: 60%;
+    height: 350px;
+    padding: 10px;
+}
+
+#name {
+    margin-top: 20px;
+}
+
+#heading {
+    font-size: 2.3em;
+    outline: #182628 2px solid;
+    outline-offset: 5px;
+}
+
+#description {
+    margin-top: 50px;
+    font-size: 1.4em;
+}
+
+#main-content a h1 {
+	border: 1px solid #fff;
+	color: #fff;
+    text-decoration: none;
+    font-size: 1.5em;
+	padding: 5px 20px;
+	font-family: poppins;
+	text-align: center;
+    display: inline-block;
+    margin-top: 40px;
+}
+#main-content a h1:hover{
+	background-color: #fff;
+  	border: none;
+  	color: black;
+  	padding: 10px 25px;
+  	text-align: center;
+  	margin-top:35px;
+  	opacity: 1;
+  	transition: 0.3s;	
+}
+
+#rate {
+    clear: both;
+    padding-top: 20px;
+}
+
+.box {
+    direction: rtl;
+}
+
+.box a{
+    font-size: 3em;
+    color: #313131;
+    transition: 0.3s all;
+}
+
+.box a:hover {
+    text-decoration: none;
+    color: #f1c40f;
+}
+
+.b1:hover ~a {
+    color: #f1c40f;  
+}
+
+.b2:hover ~a {
+    color: #f1c40f;  
+}
+
+.b3:hover ~a {
+    color: #f1c40f;  
+}
+
+.b4:hover ~a {
+    color: #f1c40f;  
+}
+
+.b5:hover ~a {
+    color: #f1c40f;  
+}
+
+
+@media (max-width : 1000px) {
+    #card {
+        width: 80%;
+    }
+}
+
+@media (max-width : 720px) {
+    #card {
+        width: 90%;
+    }
+
+    img {
+        float: none;
+        margin: auto;
+        border-right: aqua solid 8px;
+        width: 70%;
+        height: 300px;
+    }
+
+    #text {
+        display: block;
+        float: none;
+        margin: auto;
+        width: 70%;
+        height: auto;
+    }
+
+    #heading {
+        font-size: 2em;
+        outline-offset: 2px;
+    }
+    
+    #description {
+        margin-top: 10px;
+        font-size: 1.1em;
+    }
+
+    #name {
+        margin-top: 0px;
+    }
+
+    #main-content a h1 {
+        margin-top: 25px;
+        font-size: 1.3em;
+    }
+
+    #main-content a h1:hover {
+        margin-top: 20px;
+    }
+
+    .box a{
+        font-size: 2em;
+    }
+
+    #rate {
+        padding-top: 0px;
+    }
+
+    #rate h3 {
+        font-size: 1.3em;
+    }
+}
+
+@media (max-width : 530px) {
+    #card {
+        width: 90%;
+    }
+
+    img {
+        width: 70%;
+        height: 250px;
+        border-width: 2px;
+    }
+
+    #text {
+        width: 70%;
+    }
+
+    #heading {
+        font-size: 1.8em;
+        outline-offset: 2px;
+    }
+    
+    #description {
+        margin-top: 15px;
+        font-size: 0.9em;
+    }
+
+    #name {
+        margin-top: 0px;
+    }
+
+    #main-content a h1 {
+        margin-top: 15px;
+        font-size: 1.1em;
+    }
+
+    #main-content a h1:hover {
+        margin-top: 10px;
+    }
+}
+
+@media (max-width: 400px) {
+    #card {
+        width: 98%;
+    }
+
+    img {
+        width: 70%;
+        height: 200px;
+    }
+
+    #main-content {
+        margin-top: 15px;
+    }
+ 
+}

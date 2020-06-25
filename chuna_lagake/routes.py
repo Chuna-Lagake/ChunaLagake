@@ -1,6 +1,6 @@
 from flask import render_template, request, flash, redirect, url_for
 from chuna_lagake import app, db, bcrypt, mail
-from chuna_lagake.models import User, Feedback, Menu, Entry
+from chuna_lagake.models import User, Feedback, Menu
 from chuna_lagake.forms import LoginForm, RegistrationForm, FeedbackForm, RequestResetForm, ResetPasswordForm
 from flask_login import login_user, current_user, logout_user, login_required
 from flask_mail import Message
@@ -33,6 +33,23 @@ def login():
 @app.route('/products')
 def products():
 	return render_template('products.html')
+
+
+@app.route('/products/1')
+def item():
+	try: 
+		ratings = request.args['ratings']
+	except:
+		return render_template('item.html')
+	if ratings :
+		return render_template('item.html', ratings=ratings)
+
+@app.route('/products/1/buy')
+def buy():
+	if current_user.is_authenticated:
+		return redirect(url_for('item', ratings=True))
+	flash('You have to be logged in to buy items','warning')
+	return redirect(url_for('item'))
 
 @app.route('/about')
 def about():

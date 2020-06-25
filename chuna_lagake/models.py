@@ -13,7 +13,6 @@ class User(db.Model, UserMixin):
 	password = db.Column(db.String(256), nullable=False)
 	email = db.Column(db.String(100), nullable=False, unique=True)
 	feedbacks = db.relationship('Feedback', backref='user',lazy=True)
-	entries = db.relationship('Entry', backref='user',lazy=True)
 
 	def get_reset_token(self, expires_sec=1800):
 		s = Serializer(app.config['SECRET_KEY'], expires_sec)
@@ -42,19 +41,15 @@ class Feedback(db.Model):
 class Menu(db.Model):
 	id = db.Column(db.Integer, primary_key=True)
 	name = db.Column(db.String(100), nullable=False, unique=True)
-	image = db.Column(db.String, nullable=False)
 	description = db.Column(db.Text, nullable=False)
-	entries = db.relationship('Entry', backref='product', lazy=True)
+	_features = db.Column(db.String(), default='0.0', nullable=False)
+	@property
+	def features(self):
+		return [float(x) for x in self._features.split(';')]
+
+	@features.setter
+	def features(self, value):
+		self._features += ';%s' % value
 
 	def __repr__ (self):
-		return f"Item('{self.name}','{self.description}','{self.image}')"
-
-class Entry(db.Model):
-	id = db.Column(db.Integer, primary_key=True)
-	user_id = db.Column(db.Integer, db.ForeignKey('user.id'),nullable=False)
-	product_id = db.Column(db.Integer, db.ForeignKey('menu.id'), nullable=False)
-	status = db.Column(db.Boolean)
-	timestamp = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
-
-	def __repr__ (self):
-		return f"Entry('{self.user.username}','{self.product.name}','{self.status}','{self.timestamp}')"	
+		return f"Item('{self.name}','{self.description}','{self.image}')"	

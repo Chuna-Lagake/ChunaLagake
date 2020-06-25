@@ -1,0 +1,55 @@
+{% extends 'layout.html'%}
+{% set name='Products' %}
+{% block link %}
+	<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style_item.css') }}">
+{% endblock %}
+
+
+{% block content %}
+    <div id='card'>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        {% for category, message in messages %}
+        <div class="alert alert-{{category}}">	
+            {{message}}
+        </div>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+        <img src="{{ url_for('static',filename='images/paan-images/1.jpg') }}" alt="img8">
+        <span id='text'>
+            <div id='name'>
+                <span id='heading'>Mava Paan</span>
+            </div>
+            <div id='description'>
+                This is a test text This is a test text This is a test text This is a test text This is a test text This is a test text This is a test textThis is a test text
+            </div>
+            <div>
+                <a href="{{url_for('buy')}}"><h1>Buy Now</h1></a>
+            </div>
+        </span>
+            {% if ratings %}
+            <div id="rate">
+                <h3>Please Rate This Dish</h3>
+                <div class="box">
+                    <a class="b1">
+                        <ion-icon name="star"></ion-icon>
+                    </a>
+                    <a class="b2">
+                        <ion-icon name="star"></ion-icon>
+                    </a>
+                    <a class="b3">
+                        <ion-icon name="star"></ion-icon>
+                    </a>
+                    <a class="b4">
+                        <ion-icon name="star"></ion-icon>
+                    </a>
+                    <a class="b5">
+                        <ion-icon name="star"></ion-icon>
+                    </a>
+                </div>
+            </div>
+            {% endif %}
+    </div>
+    <script src="https://unpkg.com/ionicons@5.1.0/dist/ionicons.js"></script>
+{% endblock content%}

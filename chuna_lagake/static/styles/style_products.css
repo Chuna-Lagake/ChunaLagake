@@ -1,3 +1,173 @@
-h2 {
-	color: #fff;
+.main-content {
+	margin: 0!important;
+	padding: 0;
 }
+
+body {
+	background-color: #182628;
+	color: #f2f2f2;
+}
+
+h2 {
+	margin-top: 50px;
+	margin-left: 10px;
+	font-size: 1.8em;
+	font-family: Georgia, Times, 'Times New Roman', serif;
+}
+
+.container-fluid {
+	background-color: transparent;
+
+}
+
+
+.container-fluid {
+	margin: auto;
+	padding: 0;
+}
+.container-fluid img {
+	margin-bottom: 10px;
+	margin-top: 10px;
+}
+.navbar-header {
+	float: right;
+	padding-right: 10%;
+}
+
+.side li {
+	float: left;
+	list-style: none;
+	margin-top: 20px;
+	margin-left: 5px;
+	margin-bottom: 20px;
+}
+
+.side li a{
+	color: #f2f2f2;
+	text-decoration: none;
+	padding: 5px;
+	font-family: poppins;
+	font-size: 1.5em;
+}
+.side a span:nth-child(1) {
+	font-size: 0.7em;
+	margin-right: 10px;
+	margin-left: 0px;
+}
+
+.side li a:hover , .side li a:focus {
+	background-color: #65ccb8;
+	color: #182628;
+	border: none;
+	padding: 10px 10px;
+	margin: 4px 2px;
+	opacity: 1;
+	transition: 0.3s;
+}
+
+.main-content {
+	clear: both;
+}
+
+.row {
+	margin: 10px;
+}
+
+.card {
+	text-align: center;
+	padding: 5px;
+	padding-top: 20px!important;
+	background-color: transparent;
+	border:none;
+	outline: none;
+}
+
+.card img {
+	margin-bottom: 10px;
+	opacity: 0.7;
+}
+
+.card span {
+	font-size: 1.2em;
+	margin-bottom: 10px;
+}
+
+.card img:hover{
+	transition: 0.3s;
+	-moz-transform:scale(1.1);
+    -o-transform:scale(1.1);
+    -webkit-transform:scale(1.1);
+	z-index:1;
+	opacity: 1;
+}
+
+#slider {
+    clear: both;
+}
+
+#slider .container-fluid{
+    padding: 0 15px;
+}
+#slider .slider-inner{
+    padding: 0;
+}
+.slider-inner .item img{
+    display: block;
+    width: 50%;
+    margin: auto;
+    height: auto;
+    opacity: 0.7;
+}
+
+.slider-inner .item img:hover{
+    opacity: 1;
+	transition: 0.3s;
+	-moz-transform:scale(1.1);
+    -o-transform:scale(1.1);
+    -webkit-transform:scale(1.1);
+	z-index:1;
+}
+
+
+@media (max-width: 768px ) {
+
+
+	.fa {
+		display: none;
+	}
+
+	.navbar-header {
+		margin: 0;
+		padding: 0 20px;
+	}
+
+	.side li a {
+		font-size: 1.5em;
+	}
+
+
+}
+
+@media (max-width: 550px){
+    .navbar-header span {
+        font-size: 0.8em;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+	.side li span {
+		display: none;
+	}
+
+	.side li .fa {
+        display: inline;
+    }
+    
+    h2 {
+        font-size: 1em;
+    }
+
+}
+
