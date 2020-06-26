@@ -35,21 +35,22 @@ def products():
 	return render_template('products.html')
 
 
-@app.route('/products/1')
-def item():
+@app.route('/products/<key_id>')
+def item(key_id):
+	item = db.session.query(Menu).get(key_id)
 	try: 
 		ratings = request.args['ratings']
 	except:
-		return render_template('item.html')
+		return render_template('item.html', item = item, key = str(key_id))
 	if ratings :
-		return render_template('item.html', ratings=ratings)
+		return render_template('item.html', ratings=ratings, item=item , key = str(key_id))
 
-@app.route('/products/1/buy')
-def buy():
+@app.route('/products/<key_id>/buy')
+def buy(key_id):
 	if current_user.is_authenticated:
-		return redirect(url_for('item', ratings=True))
+		return redirect(url_for('item', ratings=True, key_id=key_id))
 	flash('You have to be logged in to buy items','warning')
-	return redirect(url_for('item'))
+	return redirect(url_for('item', key_id = key_id))
 
 @app.route('/about')
 def about():

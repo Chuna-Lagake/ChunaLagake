@@ -191,7 +191,7 @@ img {
 
     #heading {
         font-size: 1.8em;
-        outline-offset: 2px;
+        outline: none;
     }
     
     #description {

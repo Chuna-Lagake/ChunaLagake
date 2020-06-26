@@ -16,16 +16,16 @@
         {% endfor %}
         {% endif %}
         {% endwith %}
-        <img src="{{ url_for('static',filename='images/paan-images/1.jpg') }}" alt="img8">
+        <img src="{{ url_for('static',filename='images/paan-images/' + key + '.jpg') }}" alt="img8">
         <span id='text'>
             <div id='name'>
-                <span id='heading'>Mava Paan</span>
+                <span id='heading'>{{item.name}}</span>
             </div>
             <div id='description'>
-                This is a test text This is a test text This is a test text This is a test text This is a test text This is a test text This is a test textThis is a test text
+                {{item.description}}
             </div>
             <div>
-                <a href="{{url_for('buy')}}"><h1>Buy Now</h1></a>
+                <a href="{{url_for('buy', key_id = item.id)}}"><h1>Buy Now</h1></a>
             </div>
         </span>
             {% if ratings %}
