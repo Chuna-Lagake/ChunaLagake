@@ -8,11 +8,9 @@ from flask_mail import Mail
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'c0e86bb97cf45f8f36c696128d94e3bd'
 
-ENV = 'development'
+ENV = 'prod'
 if ENV == 'prod':
 	app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get('PROD_DB')
-elif ENV == 'development':
-	app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get('LOCAL_DB')
 else:
 	print('uri error')
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
