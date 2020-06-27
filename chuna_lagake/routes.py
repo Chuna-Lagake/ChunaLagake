@@ -44,6 +44,9 @@ def item(key_id):
 		return render_template('item.html', item = item, key = str(key_id))
 	if ratings :
 		return render_template('item.html', ratings=ratings, item=item , key = str(key_id))
+	
+	else :
+		return render_template('item.html', item=item , key = str(key_id))
 
 @app.route('/products/<key_id>/buy')
 def buy(key_id):
