@@ -20,6 +20,10 @@ h2 {
 
 }
 
+.alert {
+	padding: 2px;
+	margin-bottom: 0;
+}
 
 .container-fluid {
 	margin: auto;

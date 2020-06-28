@@ -32,19 +32,19 @@
             <div id="rate">
                 <h3>Please Rate This Dish</h3>
                 <div class="box">
-                    <a class="b1">
+                    <a class="b1" href="{{url_for('rate', key_id = item.id, star = '5')  }}">
                         <ion-icon name="star"></ion-icon>
                     </a>
-                    <a class="b2">
+                    <a class="b2" href="{{url_for('rate', key_id = item.id, star = '4')  }}">
                         <ion-icon name="star"></ion-icon>
                     </a>
-                    <a class="b3">
+                    <a class="b3" href="{{url_for('rate', key_id = item.id, star = '3')  }}">
                         <ion-icon name="star"></ion-icon>
                     </a>
-                    <a class="b4">
+                    <a class="b4" href="{{url_for('rate', key_id = item.id, star = '2')  }}">
                         <ion-icon name="star"></ion-icon>
                     </a>
-                    <a class="b5">
+                    <a class="b5" href="{{url_for('rate', key_id = item.id, star = '1')  }}">
                         <ion-icon name="star"></ion-icon>
                     </a>
                 </div>

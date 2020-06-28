@@ -1,6 +1,6 @@
 from flask import render_template, request, flash, redirect, url_for
 from chuna_lagake import app, db, bcrypt, mail
-from chuna_lagake.models import User, Feedback, Menu
+from chuna_lagake.models import User, Feedback, Menu, Ratings
 from chuna_lagake.forms import LoginForm, RegistrationForm, FeedbackForm, RequestResetForm, ResetPasswordForm
 from flask_login import login_user, current_user, logout_user, login_required
 from flask_mail import Message
@@ -37,7 +37,13 @@ def products():
 
 @app.route('/products/<key_id>')
 def item(key_id):
+	
+	if not 0 < int(key_id) < 51 :
+		flash('Requested item does not exist','warning')
+		return redirect(url_for('products'))
+
 	item = db.session.query(Menu).get(key_id)
+	
 	try: 
 		ratings = request.args['ratings']
 	except:
@@ -50,9 +56,45 @@ def item(key_id):
 
 @app.route('/products/<key_id>/buy')
 def buy(key_id):
+	if not 0 < int(key_id) < 51 :
+		flash('Requested item does not exist','warning')
+		return redirect(url_for('products'))
+
 	if current_user.is_authenticated:
 		return redirect(url_for('item', ratings=True, key_id=key_id))
+	
 	flash('You have to be logged in to buy items','warning')
+	return redirect(url_for('item', key_id = key_id))
+
+@app.route('/products/<key_id>/rate/<star>')
+def rate(key_id, star):
+	if not 0 < int(key_id) < 51 :
+		flash('Requested item does not exist','warning')
+		return redirect(url_for('products'))
+	
+	if not current_user.is_authenticated:
+		flash('You have to be logged in to rate items','warning')
+		return redirect(url_for('item', key_id = key_id))
+
+	if not 0 < int(star) < 6 :
+		flash('Rating has to be between 1 and 5','warning')
+		return redirect(url_for('item', key_id = key_id))
+
+	user_id = current_user.id
+	item_id = key_id
+
+	rate_object = Ratings.query.filter_by(user_id=user_id, item_id=item_id).first()
+	
+	if not rate_object :
+		rating = Ratings(user_id = user_id, item_id = item_id, rating = star)
+		db.session.add(rating)
+		db.session.commit()
+
+	else:
+		rate_object.rating = 0.4*rate_object.rating + 0.6*int(star)
+		db.session.commit()
+
+	flash('Your review has been successfully recorded','success')
 	return redirect(url_for('item', key_id = key_id))
 
 @app.route('/about')

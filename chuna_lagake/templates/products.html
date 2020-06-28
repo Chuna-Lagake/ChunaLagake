@@ -56,6 +56,15 @@
 	</header>
 
 	<div class="main-content container-fluid">
+		{% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        {% for category, message in messages %}
+        <div class="alert alert-{{category}}">	
+            {{message}}
+        </div>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
 		<section id="slider">
 			<div class="container-fluid">
 				<div class="slider-inner col-xs-12 col-sm-12 col-md-12 col-lg-12">
