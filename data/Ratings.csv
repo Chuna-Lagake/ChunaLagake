@@ -1,0 +1,251 @@
+User_ID,Ratings,Item_Name,Item_ID
+0,3.0,Banaras Sada Paan,1
+0,3.0,Maghai Meetha Paan,5
+0,5.0,Maghai Chocolate Paan,7
+0,2.0,Calcutta Strawberry Paan,12
+1,3.0,Banaras Sada Paan,1
+1,3.0,Calcutta Sada Paan,2
+1,4.0,Banaras Meetha Paan,3
+1,5.0,Maghai Chocolate Paan,7
+1,5.0,Maghai Pineapple Paan,15
+1,4.0,Calcutta Golden Chocolate Paan,26
+1,4.0,Maghai Golden Chocolate Paan,27
+1,5.0,Calcutta Shahi Chocolate Paan,32
+1,5.0,Maghai Shahi Chocolate Paan,33
+1,5.0,Calcutta Nutella Paan,46
+1,5.0,Maghai Nutella Paan,47
+2,5.0,Banaras Meetha Paan,3
+2,5.0,Calcutta Meetha Paan,4
+2,5.0,Maghai Meetha Paan,5
+2,5.0,Calcutta Chocolate Paan,6
+2,5.0,Maghai Chocolate Paan,7
+3,3.0,Banaras Sada Paan,1
+3,2.0,Calcutta Sada Paan,2
+3,1.0,Banaras Meetha Paan,3
+3,2.0,Calcutta Meetha Paan,4
+3,3.0,Maghai Meetha Paan,5
+3,2.0,Calcutta Chocolate Paan,6
+3,1.0,Maghai Chocolate Paan,7
+3,2.0,Calcutta Dry Fruit Paan,8
+3,3.0,Maghai Dry Fruit Paan,9
+3,2.0,Calcutta Mango Paan,10
+3,1.0,Maghai Mango Paan,11
+3,2.0,Calcutta Strawberry Paan,12
+3,3.0,Maghai Strawberry Paan,13
+3,2.0,Calcutta Pineapple Paan,14
+3,1.0,Maghai Pineapple Paan,15
+3,2.0,Calcutta Gold Paan,16
+3,3.0,Maghai Gold Paan,17
+3,2.0,Calcutta Kaju Paan,18
+3,1.0,Maghai Kaju Paan,19
+3,2.0,Calcutta Jelly Paan,20
+3,3.0,Maghai Jelly Paan,21
+3,2.0,Calcutta Rose Paan,22
+3,1.0,Maghai Rose Paan,23
+3,2.0,Calcutta Shahi Paan,24
+3,3.0,Maghai Shahi Paan,25
+3,2.0,Calcutta Golden Chocolate Paan,26
+3,1.0,Maghai Golden Chocolate Paan,27
+3,2.0,Calcutta Kesar Paan,28
+3,3.0,Maghai Kesar Paan,29
+3,2.0,Calcutta Vanilla Chocolate Paan,30
+3,1.0,Maghai Vanilla Chocolate Paan,31
+3,2.0,Calcutta Shahi Chocolate Paan,32
+3,3.0,Maghai Shahi Chocolate Paan,33
+3,2.0,Calcutta Masala Paan,34
+3,1.0,Maghai Masala Paan,35
+3,2.0,Calcutta Silver Masala Paan,36
+3,3.0,Maghai Silver Masala Paan,37
+3,2.0,Calcutta Khatta Meetha Paan,38
+3,1.0,Maghai Khatta Meetha Paan,39
+3,2.0,Calcutta White Chocolate Paan,40
+3,3.0,Maghai White Chocolate Paan,41
+3,2.0,Calcutta RaatRani Paan,42
+3,1.0,Maghai RaatRani Paan,43
+3,2.0,Calcutta Orange Paan,44
+3,3.0,Maghai Orange Paan,45
+3,2.0,Calcutta Nutella Paan,46
+3,1.0,Maghai Nutella Paan,47
+3,2.0,Calcutta ChunaLagake Special Paan,48
+3,3.0,Maghai ChunaLagake Special Paan,49
+3,2.0,Special Shahi Golden Paan,50
+4,3.0,Banaras Sada Paan,1
+4,5.0,Calcutta Meetha Paan,4
+5,5.0,Special Shahi Golden Paan,50
+6,4.0,Calcutta Meetha Paan,4
+8,1.0,Banaras Sada Paan,1
+8,1.0,Calcutta Sada Paan,2
+8,1.0,Banaras Meetha Paan,3
+8,3.0,Calcutta Meetha Paan,4
+8,3.0,Maghai Meetha Paan,5
+8,1.0,Calcutta Chocolate Paan,6
+8,1.0,Maghai Chocolate Paan,7
+8,3.0,Calcutta Dry Fruit Paan,8
+8,1.0,Maghai Dry Fruit Paan,9
+8,3.0,Calcutta Mango Paan,10
+8,3.0,Calcutta Strawberry Paan,12
+8,3.0,Maghai Strawberry Paan,13
+8,1.0,Calcutta Pineapple Paan,14
+8,3.0,Calcutta White Chocolate Paan,40
+8,1.0,Calcutta RaatRani Paan,42
+8,4.0,Calcutta Orange Paan,44
+10,2.0,Banaras Sada Paan,1
+10,2.0,Calcutta Sada Paan,2
+10,3.0,Calcutta Meetha Paan,4
+10,4.0,Calcutta Chocolate Paan,6
+10,4.0,Maghai Chocolate Paan,7
+11,1.0,Calcutta Chocolate Paan,6
+12,3.0,Banaras Sada Paan,1
+12,2.0,Calcutta Sada Paan,2
+12,4.0,Banaras Meetha Paan,3
+12,3.0,Calcutta Meetha Paan,4
+12,3.0,Maghai Meetha Paan,5
+12,2.0,Calcutta Chocolate Paan,6
+12,3.0,Maghai Chocolate Paan,7
+12,1.0,Calcutta Dry Fruit Paan,8
+12,1.0,Maghai Dry Fruit Paan,9
+12,2.0,Calcutta Mango Paan,10
+12,1.0,Maghai Mango Paan,11
+12,1.0,Calcutta Strawberry Paan,12
+12,1.0,Maghai Strawberry Paan,13
+12,1.0,Calcutta Pineapple Paan,14
+12,1.0,Maghai Pineapple Paan,15
+12,3.0,Calcutta Gold Paan,16
+12,3.0,Maghai Gold Paan,17
+12,2.0,Calcutta Kaju Paan,18
+12,2.0,Maghai Kaju Paan,19
+12,1.0,Calcutta Jelly Paan,20
+12,1.0,Maghai Jelly Paan,21
+12,1.0,Calcutta Rose Paan,22
+12,2.0,Maghai Rose Paan,23
+12,3.0,Calcutta Shahi Paan,24
+12,3.0,Maghai Shahi Paan,25
+12,1.0,Calcutta Golden Chocolate Paan,26
+12,1.0,Maghai Golden Chocolate Paan,27
+12,1.0,Calcutta Kesar Paan,28
+12,1.0,Maghai Kesar Paan,29
+12,3.0,Calcutta Vanilla Chocolate Paan,30
+12,3.0,Maghai Vanilla Chocolate Paan,31
+12,3.0,Calcutta Shahi Chocolate Paan,32
+12,3.0,Maghai Shahi Chocolate Paan,33
+12,4.0,Calcutta Masala Paan,34
+12,4.0,Maghai Masala Paan,35
+12,2.0,Calcutta Silver Masala Paan,36
+12,2.0,Maghai Silver Masala Paan,37
+12,3.0,Calcutta Khatta Meetha Paan,38
+12,3.0,Maghai Khatta Meetha Paan,39
+12,3.0,Calcutta White Chocolate Paan,40
+12,3.0,Maghai White Chocolate Paan,41
+12,1.0,Calcutta RaatRani Paan,42
+12,1.0,Maghai RaatRani Paan,43
+12,1.0,Calcutta Orange Paan,44
+12,1.0,Maghai Orange Paan,45
+12,1.0,Calcutta Nutella Paan,46
+12,1.0,Maghai Nutella Paan,47
+12,5.0,Calcutta ChunaLagake Special Paan,48
+12,5.0,Maghai ChunaLagake Special Paan,49
+12,3.0,Special Shahi Golden Paan,50
+13,3.0,Banaras Sada Paan,1
+13,3.0,Calcutta Sada Paan,2
+13,5.0,Banaras Meetha Paan,3
+13,5.0,Calcutta Meetha Paan,4
+13,5.0,Maghai Meetha Paan,5
+13,5.0,Calcutta Chocolate Paan,6
+13,5.0,Maghai Chocolate Paan,7
+13,5.0,Calcutta Dry Fruit Paan,8
+13,5.0,Maghai Dry Fruit Paan,9
+13,5.0,Calcutta Mango Paan,10
+13,5.0,Maghai Mango Paan,11
+13,5.0,Calcutta Strawberry Paan,12
+13,5.0,Maghai Strawberry Paan,13
+13,5.0,Calcutta Pineapple Paan,14
+13,5.0,Maghai Pineapple Paan,15
+13,5.0,Calcutta Gold Paan,16
+13,5.0,Maghai Gold Paan,17
+13,5.0,Calcutta Kaju Paan,18
+13,5.0,Maghai Kaju Paan,19
+13,5.0,Calcutta Jelly Paan,20
+13,5.0,Maghai Jelly Paan,21
+13,5.0,Calcutta Rose Paan,22
+13,5.0,Maghai Rose Paan,23
+13,5.0,Calcutta Shahi Paan,24
+13,5.0,Maghai Shahi Paan,25
+13,5.0,Calcutta Golden Chocolate Paan,26
+13,5.0,Maghai Golden Chocolate Paan,27
+13,5.0,Calcutta Kesar Paan,28
+13,5.0,Maghai Kesar Paan,29
+13,5.0,Calcutta Vanilla Chocolate Paan,30
+13,5.0,Maghai Vanilla Chocolate Paan,31
+13,5.0,Calcutta Shahi Chocolate Paan,32
+13,5.0,Maghai Shahi Chocolate Paan,33
+13,5.0,Calcutta Masala Paan,34
+13,5.0,Maghai Masala Paan,35
+13,5.0,Calcutta Silver Masala Paan,36
+13,5.0,Maghai Silver Masala Paan,37
+13,5.0,Calcutta Khatta Meetha Paan,38
+13,5.0,Maghai Khatta Meetha Paan,39
+13,5.0,Calcutta White Chocolate Paan,40
+13,5.0,Maghai White Chocolate Paan,41
+13,3.0,Calcutta RaatRani Paan,42
+13,3.0,Maghai RaatRani Paan,43
+13,3.0,Calcutta Orange Paan,44
+13,3.0,Maghai Orange Paan,45
+13,5.0,Calcutta Nutella Paan,46
+13,5.0,Maghai Nutella Paan,47
+13,5.0,Calcutta ChunaLagake Special Paan,48
+13,5.0,Maghai ChunaLagake Special Paan,49
+13,5.0,Special Shahi Golden Paan,50
+14,1.0,Banaras Sada Paan,1
+14,1.0,Calcutta Sada Paan,2
+14,4.0,Banaras Meetha Paan,3
+14,4.0,Calcutta Meetha Paan,4
+14,4.0,Maghai Meetha Paan,5
+14,3.0,Calcutta Chocolate Paan,6
+14,3.0,Maghai Chocolate Paan,7
+14,3.0,Calcutta Dry Fruit Paan,8
+14,2.0,Maghai Dry Fruit Paan,9
+14,3.0,Calcutta Mango Paan,10
+14,3.0,Maghai Mango Paan,11
+14,2.0,Calcutta Strawberry Paan,12
+14,2.0,Maghai Strawberry Paan,13
+14,2.0,Calcutta Pineapple Paan,14
+14,2.0,Maghai Pineapple Paan,15
+14,3.0,Calcutta Gold Paan,16
+14,3.0,Maghai Gold Paan,17
+14,2.0,Calcutta Kaju Paan,18
+14,2.0,Maghai Kaju Paan,19
+14,3.0,Calcutta Jelly Paan,20
+14,3.0,Maghai Jelly Paan,21
+14,3.0,Calcutta Rose Paan,22
+14,3.0,Maghai Rose Paan,23
+14,4.0,Calcutta Shahi Paan,24
+14,4.0,Maghai Shahi Paan,25
+14,3.0,Calcutta Golden Chocolate Paan,26
+14,3.0,Maghai Golden Chocolate Paan,27
+14,3.0,Calcutta Kesar Paan,28
+14,3.0,Maghai Kesar Paan,29
+14,3.0,Calcutta Vanilla Chocolate Paan,30
+14,3.0,Maghai Vanilla Chocolate Paan,31
+14,3.0,Calcutta Shahi Chocolate Paan,32
+14,3.0,Maghai Shahi Chocolate Paan,33
+14,2.0,Calcutta Masala Paan,34
+14,2.0,Maghai Masala Paan,35
+14,2.0,Calcutta Silver Masala Paan,36
+14,2.0,Maghai Silver Masala Paan,37
+14,3.0,Calcutta Khatta Meetha Paan,38
+14,3.0,Maghai Khatta Meetha Paan,39
+14,4.0,Calcutta White Chocolate Paan,40
+14,4.0,Maghai White Chocolate Paan,41
+14,3.0,Calcutta RaatRani Paan,42
+14,3.0,Maghai RaatRani Paan,43
+14,2.0,Calcutta Orange Paan,44
+14,2.0,Maghai Orange Paan,45
+14,3.0,Calcutta Nutella Paan,46
+14,3.0,Maghai Nutella Paan,47
+14,5.0,Calcutta ChunaLagake Special Paan,48
+14,5.0,Maghai ChunaLagake Special Paan,49
+14,5.0,Special Shahi Golden Paan,50
+15,1.0,Calcutta Chocolate Paan,6
+16,1.0,Banaras Meetha Paan,3
+16,2.0,Calcutta Meetha Paan,4
+16,3.0,Maghai Meetha Paan,5
