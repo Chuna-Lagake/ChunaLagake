@@ -61,6 +61,15 @@ def buy(key_id):
 		return redirect(url_for('products'))
 
 	if current_user.is_authenticated:
+
+		user_id = current_user.id
+		item_id = key_id
+		rate_object = Ratings.query.filter_by(user_id=user_id, item_id=item_id).first()
+
+		rate_object.times_bought += 1
+
+
+
 		return redirect(url_for('item', ratings=True, key_id=key_id))
 	
 	flash('You have to be logged in to buy items','warning')
@@ -83,8 +92,7 @@ def rate(key_id, star):
 	user_id = current_user.id
 	item_id = key_id
 
-	rate_object = Ratings.query.filter_by(user_id=user_id, item_id=item_id).first()
-	
+	rate_object = Ratings.query.filter_by(user_id=user_id, item_id=item_id).first()	
 	if not rate_object :
 		rating = Ratings(user_id = user_id, item_id = item_id, rating = star)
 		db.session.add(rating)

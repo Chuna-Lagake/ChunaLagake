@@ -61,6 +61,7 @@ class Ratings(db.Model):
 	user_id = db.Column(db.Integer, db.ForeignKey('user.id'),nullable=False)
 	item_id = db.Column(db.Integer, db.ForeignKey('menu.id'),nullable=False)	
 	rating = db.Column(db.Float, default=0)
+	times_bought = db.Column(db.Integer, default=0)
 
 	def __repr__ (self):
 		return f"Entry('{self.user}','{self.item}','{self.rating}')"

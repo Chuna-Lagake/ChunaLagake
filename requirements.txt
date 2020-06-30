@@ -10,6 +10,7 @@ Flask-WTF==0.14.3
 gunicorn==20.0.4
 itsdangerous==1.1.0
 Jinja2==2.11.2
+lightfm==1.15
 protobuf==3.12.2
 psycopg2==2.8.5
 rsa==4.6
