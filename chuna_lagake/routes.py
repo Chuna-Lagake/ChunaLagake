@@ -34,7 +34,7 @@ def login():
 @app.route('/products')
 def products():
 	items = Menu.query.all()
-	num_bought = np.argsort([len(item.ratings) for item in items ])
+	num_bought = np.argsort([len(item.ratings) for item in items ])[::-1]
 	trending_items = [str(x+1) for x in num_bought[:5]]
 	return render_template('products.html', trending_items = trending_items)
 
