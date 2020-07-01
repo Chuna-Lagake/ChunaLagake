@@ -4,6 +4,7 @@ from chuna_lagake.models import User, Feedback, Menu, Ratings
 from chuna_lagake.forms import LoginForm, RegistrationForm, FeedbackForm, RequestResetForm, ResetPasswordForm
 from flask_login import login_user, current_user, logout_user, login_required
 from flask_mail import Message
+import numpy as np
 
 def send_reset_email(user):
 	token = user.get_reset_token()
@@ -32,7 +33,10 @@ def login():
 
 @app.route('/products')
 def products():
-	return render_template('products.html')
+	items = Menu.query.all()
+	num_bought = np.argsort([len(item.ratings) for item in items ])
+	trending_items = [str(x+1) for x in num_bought[:5]]
+	return render_template('products.html', trending_items = trending_items)
 
 
 @app.route('/products/<key_id>')
@@ -67,9 +71,6 @@ def buy(key_id):
 		rate_object = Ratings.query.filter_by(user_id=user_id, item_id=item_id).first()
 
 		rate_object.times_bought += 1
-
-
-
 		return redirect(url_for('item', ratings=True, key_id=key_id))
 	
 	flash('You have to be logged in to buy items','warning')

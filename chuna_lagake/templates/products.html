@@ -70,14 +70,15 @@
 				<div class="slider-inner col-xs-12 col-sm-12 col-md-12 col-lg-12">
 					<h2>Trending Now</h2>
 					<div id="owl-demo" class="owl-carousel owl-theme" style="margin-top: 20px;">
+						{% for i in trending_items %}
+						
 						<div class="item">
-							<img src="{{ url_for('static',filename='images/mawa_paan.jpg') }}" class="img-fluid mx-auto d-block" alt="img8">					</div>
-						<div class="item">
-							<img src="{{ url_for('static',filename='images/paan-images/1.jpg') }}" class="img-fluid mx-auto d-block" alt="img8">					</div>
-						<div class="item">
-							<img src="{{ url_for('static',filename='images/paan-images/2.jpg') }}" class="img-fluid mx-auto d-block" alt="img8">					</div>
-						<div class="item">
-							<img src="{{ url_for('static',filename='images/paan-images/3.jpg') }}" class="img-fluid mx-auto d-block" alt="img8">					</div>
+							<a href="{{url_for('item', key_id=i)}}">
+							<img src="{{ url_for('static',filename='images/paan-images/' + i + '.jpg') }}" class="img-fluid mx-auto d-block" alt="img8">
+							</a>
+						</div>
+
+						{% endfor %}
 					</div>                                       
 				</div>
 			{% if current_user.is_authenticated %}
