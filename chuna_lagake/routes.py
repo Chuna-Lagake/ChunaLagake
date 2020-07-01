@@ -90,6 +90,7 @@ def rate(key_id, star):
 	item_id = key_id
 
 	rate_object = Ratings.query.filter_by(user_id=user_id, item_id=item_id).first()	
+	
 	if not rate_object :
 		rating = Ratings(user_id = user_id, item_id = item_id, rating = star)
 		db.session.add(rating)
@@ -99,6 +100,7 @@ def rate(key_id, star):
 		rate_object.rating = 0.4*rate_object.rating + 0.6*int(star)
 		db.session.commit()
 
+	rate_object = Ratings.query.filter_by(user_id=user_id, item_id=item_id).first()	
 	rate_object.times_bought += 1
 
 	flash('Your review has been successfully recorded','success')
