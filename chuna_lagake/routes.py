@@ -179,6 +179,10 @@ def signup():
 		return redirect(url_for('login'))
 	return render_template('signup.html', form=form)
 
+@app.route('/terms',methods=['GET','POST'])
+def tnc():
+	return render_template('tnc.html')
+
 @app.route('/logout')
 def logout():
 	logout_user()
