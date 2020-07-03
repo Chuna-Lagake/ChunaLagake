@@ -7,7 +7,6 @@ from flask_mail import Message
 import numpy as np
 from chuna_lagake.build_recommendation import *
 
-model, interactions, labels, item_features = train_model()
 
 def send_reset_email(user):
 	token = user.get_reset_token()
@@ -44,6 +43,7 @@ def products():
 		if len(current_user.ratings) == 0 :
 			list_of_recommendations = trending_items
 		else :
+			model, interactions, labels, item_features = train_model()
 			list_of_recommendations = convert_to_user_recommend(model, interactions, labels, item_features, [current_user.id])
 		return render_template('products.html', trending_items = trending_items, recommended_items = [str(x) for x in list_of_recommendations])
 	
@@ -76,10 +76,10 @@ def buy(key_id):
 		return redirect(url_for('products'))
 
 	if current_user.is_authenticated:
-		return redirect(url_for('item', ratings=True, key_id=key_id))
-		
 		item_object = Menu.query.get(key_id)
 		item_object.times_bought += 1
+		return redirect(url_for('item', ratings=True, key_id=key_id))
+
 	flash('You have to be logged in to buy items','warning')
 	return redirect(url_for('item', key_id = key_id))
 
