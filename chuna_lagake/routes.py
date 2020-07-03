@@ -35,8 +35,12 @@ def login():
 
 @app.route('/products')
 def products():
-	items = Menu.query.all()
-	num_bought = np.argsort([item.times_bought for item in items ])[::-1]
+	
+	num_bought = []
+	for i in range(Menu.query.count()):
+		item = Menu.query.get(i+1)
+		num_bought.append(item.times_bought)
+	num_bought = np.argsort(-num_bought)
 	trending_items = [str(x+1) for x in num_bought[:5]]
 	
 	if current_user.is_authenticated:
@@ -45,6 +49,7 @@ def products():
 		else :
 			model, interactions, labels, item_features = train_model()
 			list_of_recommendations = convert_to_user_recommend(model, interactions, labels, item_features, [current_user.id])
+			trending_items = [str(x+1) for x in num_bought[:5]]
 		return render_template('products.html', trending_items = trending_items, recommended_items = [str(x) for x in list_of_recommendations])
 	
 	return render_template('products.html', trending_items = trending_items)
