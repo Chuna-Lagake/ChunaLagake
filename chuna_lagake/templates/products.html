@@ -81,23 +81,25 @@
 						{% endfor %}
 					</div>
 				</div>
+			</div>
 			{% if current_user.is_authenticated %}
-			<div class="slider-inner col-xs-12 col-sm-12 col-md-12 col-lg-12">
-				<h2>Recommended for You</h2>
-				<div id="owl-demo" class="owl-carousel owl-theme" style="margin-top: 20px;">
-					{% for i in list_of_recommendations %}
+			<div class="container-fluid">
+				<div class="slider-inner col-xs-12 col-sm-12 col-md-12 col-lg-12">
+					<h2>Recommended For You</h2>
+					<div id="owl-demo" class="owl-carousel owl-theme" style="margin-top: 20px;">
+						{% for i in recommended_items %}
 
-					<div class="item">
-						<a href="{{url_for('item', key_id=i)}}">
-						<img src="{{ url_for('static',filename='images/paan-images/' + i + '.jpg') }}" class="img-fluid mx-auto d-block" alt="img8">
-						</a>
+						<div class="item">
+							<a href="{{url_for('item', key_id=i)}}">
+							<img src="{{ url_for('static',filename='images/paan-images/' + i + '.jpg') }}" class="img-fluid mx-auto d-block" alt="img8">
+							</a>
+						</div>
+
+						{% endfor %}
 					</div>
-
-					{% endfor %}
 				</div>
 			</div>
 			{% endif %}
-			</div>
 		</section>
 		<div class="container-fluid">
 			<div id="menu-items">
