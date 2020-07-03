@@ -43,7 +43,7 @@ def get_data():
         else:
             rating_dict.update({"Recommend_ID":user_recommend.index(rating.user_id)})
         ratings.append(rating_dict)
-
+    print(user_recommend)
     return users, items, ratings
 
 def get_user_features():
