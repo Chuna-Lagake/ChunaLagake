@@ -62,11 +62,6 @@ def add_item_features(dataset, feature):
                     item_features=(x[feature] for x in get_item_features()))
 
 
-def add_item_features(dataset, feature):
-    dataset.fit_partial(items=(x['Item_ID'] for x in get_item_features()),
-                    item_features=(x[feature] for x in get_item_features()))
-
-
 
 def train_model():
     dataset = Dataset()
@@ -101,14 +96,7 @@ def sample_recommendation(model, data, labels, item_features, user_ids):
 
         top_items = labels[np.argsort(-scores)]
 
-        print("USER ID: {}".format(user_recommend[user_id]))
-        #print("---Known Positives:")
-
-
-        print("---Recommmended:")
-
         for x in top_items[:5]:
-            print(x)
             list_of_recommendations.append(x)
     return list_of_recommendations
 

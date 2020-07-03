@@ -38,11 +38,13 @@ def login():
 @app.route('/products')
 def products():
 	items = Menu.query.all()
-	num_bought = np.argsort([len(item.ratings) for item in items ])[::-1]
+	num_bought = np.argsort([item.times_bought for item in items ])[::-1]
 	trending_items = [str(x+1) for x in num_bought[:5]]
+	
 	if current_user.is_authenticated:
 		list_of_recommendations = convert_to_user_recommend(model, interactions, labels, item_features, [current_user.id])
 		return render_template('products.html', trending_items = trending_items, recommended_items = [str(x) for x in list_of_recommendations])
+	
 	return render_template('products.html', trending_items = trending_items)
 
 
@@ -72,10 +74,9 @@ def buy(key_id):
 		return redirect(url_for('products'))
 
 	if current_user.is_authenticated:
-		user_id = current_user.id
-		item_id = key_id
 		return redirect(url_for('item', ratings=True, key_id=key_id))
-
+		item_object = Menu.query.get(item_id)
+		item_object.times_bought += 1
 	flash('You have to be logged in to buy items','warning')
 	return redirect(url_for('item', key_id = key_id))
 
@@ -106,9 +107,6 @@ def rate(key_id, star):
 	else:
 		rate_object.rating = 0.4*rate_object.rating + 0.6*int(star)
 		db.session.commit()
-
-	rate_object = Ratings.query.filter_by(user_id=user_id, item_id=item_id).first()
-	rate_object.times_bought += 1
 
 	flash('Your review has been successfully recorded','success')
 	return redirect(url_for('item', key_id = key_id))

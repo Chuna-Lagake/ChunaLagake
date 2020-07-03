@@ -43,6 +43,7 @@ class Menu(db.Model):
 	name = db.Column(db.String(100), nullable=False, unique=True)
 	description = db.Column(db.Text, nullable=False)
 	_features = db.Column(db.String(), default='0.0', nullable=False)
+	times_bought = db.Column(db.Integer, default=0)
 	ratings = db.relationship('Ratings', backref='item', lazy=True)
 	
 	@property
@@ -61,7 +62,6 @@ class Ratings(db.Model):
 	user_id = db.Column(db.Integer, db.ForeignKey('user.id'),nullable=False)
 	item_id = db.Column(db.Integer, db.ForeignKey('menu.id'),nullable=False)	
 	rating = db.Column(db.Float, default=0)
-	times_bought = db.Column(db.Integer, default=0)
 
 	def __repr__ (self):
 		return f"Entry('{self.user}','{self.item}','{self.rating}')"
