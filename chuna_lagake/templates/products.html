@@ -22,12 +22,12 @@
 						<li>
 							<a href="{{url_for('home')}}">
 							<span class="fa fa-home"></span><span>Home</span>
-							</a>							
+							</a>
 						</li>
 						<li>
 							<a href="{{url_for('products')}}">
 							<span class="fa fa-cutlery"></span><span>Products</span>
-							</a>							
+							</a>
 						</li>
 						<li>
 							<a href="{{url_for('about')}}">
@@ -36,7 +36,7 @@
 						<li>
 							<a href="{{url_for('contact')}}">
 							<span class="fa fa-phone"></span><span>Contact Us</span>
-							</a>							
+							</a>
 						</li>
 						<li>
 							{% if current_user.is_authenticated %}
@@ -48,18 +48,18 @@
 								<span class="fa fa-sign-in"></span><span>Login</span>
 								</a>
 							{% endif %}
-						</li>	
+						</li>
 					</ul>
 				</div>
 			</div>
-		</div>		
+		</div>
 	</header>
 
 	<div class="main-content container-fluid">
 		{% with messages = get_flashed_messages(with_categories=true) %}
         {% if messages %}
         {% for category, message in messages %}
-        <div class="alert alert-{{category}}">	
+        <div class="alert alert-{{category}}">
             {{message}}
         </div>
         {% endfor %}
@@ -71,7 +71,7 @@
 					<h2>Trending Now</h2>
 					<div id="owl-demo" class="owl-carousel owl-theme" style="margin-top: 20px;">
 						{% for i in trending_items %}
-						
+
 						<div class="item">
 							<a href="{{url_for('item', key_id=i)}}">
 							<img src="{{ url_for('static',filename='images/paan-images/' + i + '.jpg') }}" class="img-fluid mx-auto d-block" alt="img8">
@@ -79,22 +79,23 @@
 						</div>
 
 						{% endfor %}
-					</div>                                       
+					</div>
 				</div>
 			{% if current_user.is_authenticated %}
-				<div class="slider-inner col-xs-12 col-sm-12 col-md-12 col-lg-12">
-					<h2>Recommended For You</h2>
-					<div id="owl-demo" class="owl-carousel owl-theme" style="margin-top: 20px;">
-						<div class="item">
-							<img src="{{ url_for('static',filename='images/mawa_paan.jpg') }}" class="img-fluid mx-auto d-block" alt="img8">					</div>
-						<div class="item">
-							<img src="{{ url_for('static',filename='images/mawa_paan.jpg') }}" class="img-fluid mx-auto d-block" alt="img8">					</div>
-						<div class="item">
-							<img src="{{ url_for('static',filename='images/mawa_paan.jpg') }}" class="img-fluid mx-auto d-block" alt="img8">					</div>
-						<div class="item">
-							<img src="{{ url_for('static',filename='images/mawa_paan.jpg') }}" class="img-fluid mx-auto d-block" alt="img8">					</div>
-					</div>                                       
+			<div class="slider-inner col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<h2>Recommended for You</h2>
+				<div id="owl-demo" class="owl-carousel owl-theme" style="margin-top: 20px;">
+					{% for i in list_of_recommendations %}
+
+					<div class="item">
+						<a href="{{url_for('item', key_id=i)}}">
+						<img src="{{ url_for('static',filename='images/paan-images/' + i + '.jpg') }}" class="img-fluid mx-auto d-block" alt="img8">
+						</a>
+					</div>
+
+					{% endfor %}
 				</div>
+			</div>
 			{% endif %}
 			</div>
 		</section>
@@ -429,5 +430,3 @@
 	</script>
 </body>
 </html>
-        
-        

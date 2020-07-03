@@ -87,12 +87,13 @@ def train_model():
     model = LightFM(loss='bpr')
     model.fit(interactions, item_features=item_features)
 
-    labels = np.array([x['Item_ID'] for x in get_ratings()])
+    labels = np.array([x['Item_ID'] for x in get_item_features()])
     print("Model Trained Successfully.....")
     return model, interactions, labels, item_features
 
 def sample_recommendation(model, data, labels, item_features, user_ids):
     n_users, n_items = data.shape
+    list_of_recommendations = []
     for user_id in user_ids:
         known_positives = labels[data.tocsr()[user_id].indices]
 
@@ -101,23 +102,23 @@ def sample_recommendation(model, data, labels, item_features, user_ids):
         top_items = labels[np.argsort(-scores)]
 
         print("USER ID: {}".format(user_recommend[user_id]))
-        print("   Known Positives:")
+        #print("---Known Positives:")
 
-        for x in known_positives:
-            print("      {}".format(item_features_names[x-1].get("Item_Name")))
-#             print("    {}".format(x))
 
-        print("   Recommmended:")
+        print("---Recommmended:")
 
-        for x in top_items[:3]:
-            print("      {}".format(item_features_names[x-1].get("Item_Name")))
+        for x in top_items[:5]:
+            print(x)
+            list_of_recommendations.append(x)
+    return list_of_recommendations
 
 
 def convert_to_user_recommend(model, interactions, labels, item_features, user_ids):
     new_user_id = []
     for user_id in user_ids:
         new_user_id.append(user_recommend.index(user_id))
-    sample_recommendation(model, interactions, labels, item_features, new_user_id)
+    list_of_recommendations = sample_recommendation(model, interactions, labels, item_features, new_user_id)
+    return list_of_recommendations
 
 def start(user_ids, model, interactions, labels, item_features):
     # model, interactions, labels, item_features = train_model()

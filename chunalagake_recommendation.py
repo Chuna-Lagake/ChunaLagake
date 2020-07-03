@@ -5,6 +5,8 @@ model, interactions, labels, item_features = train_model()
 print("_________________STARTING RECOMMENDATION ENGINE_________________\n\n\n")
 print("Enter:\n1 for just training\n2 for recommending on trained model\n3 for training and recommending\n")
 
+user_ids = [1, 2, 3]
+
 run = True
 while run:
     input_val = int(input())
@@ -13,12 +15,12 @@ while run:
         print("________________________________________________________________")
 
     elif input_val == 2:
-        start([1, 2], model, interactions, labels, item_features)
+        start(user_ids, model, interactions, labels, item_features)
         print("________________________________________________________________")
 
     elif input_val == 3:
         model, interactions, labels, item_features = train_model()
-        start([1, 2], model, interactions, labels, item_features)
+        start(user_ids, model, interactions, labels, item_features)
         print("________________________________________________________________")
 
     elif input_val == 4:

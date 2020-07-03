@@ -5,6 +5,10 @@ from chuna_lagake.forms import LoginForm, RegistrationForm, FeedbackForm, Reques
 from flask_login import login_user, current_user, logout_user, login_required
 from flask_mail import Message
 import numpy as np
+from chuna_lagake.build_recommendation import *
+
+model, interactions, labels, item_features = train_model()
+
 
 def send_reset_email(user):
 	token = user.get_reset_token()
@@ -36,25 +40,28 @@ def products():
 	items = Menu.query.all()
 	num_bought = np.argsort([len(item.ratings) for item in items ])[::-1]
 	trending_items = [str(x+1) for x in num_bought[:5]]
+	if current_user.is_authenticated:
+		list_of_recommendations = convert_to_user_recommend(model, interactions, labels, item_features, [current_user.id])
+		return render_template('products.html', trending_items = trending_items, recommended_items = list_of_recommendations)
 	return render_template('products.html', trending_items = trending_items)
 
 
 @app.route('/products/<key_id>')
 def item(key_id):
-	
+
 	if not 0 < int(key_id) < 51 :
 		flash('Requested item does not exist','warning')
 		return redirect(url_for('products'))
 
 	item = db.session.query(Menu).get(key_id)
-	
-	try: 
+
+	try:
 		ratings = request.args['ratings']
 	except:
 		return render_template('item.html', item = item, key = str(key_id))
 	if ratings :
 		return render_template('item.html', ratings=ratings, item=item , key = str(key_id))
-	
+
 	else :
 		return render_template('item.html', item=item , key = str(key_id))
 
@@ -68,7 +75,7 @@ def buy(key_id):
 		user_id = current_user.id
 		item_id = key_id
 		return redirect(url_for('item', ratings=True, key_id=key_id))
-	
+
 	flash('You have to be logged in to buy items','warning')
 	return redirect(url_for('item', key_id = key_id))
 
@@ -77,7 +84,7 @@ def rate(key_id, star):
 	if not 0 < int(key_id) < 51 :
 		flash('Requested item does not exist','warning')
 		return redirect(url_for('products'))
-	
+
 	if not current_user.is_authenticated:
 		flash('You have to be logged in to rate items','warning')
 		return redirect(url_for('item', key_id = key_id))
@@ -89,8 +96,8 @@ def rate(key_id, star):
 	user_id = current_user.id
 	item_id = key_id
 
-	rate_object = Ratings.query.filter_by(user_id=user_id, item_id=item_id).first()	
-	
+	rate_object = Ratings.query.filter_by(user_id=user_id, item_id=item_id).first()
+
 	if not rate_object :
 		rating = Ratings(user_id = user_id, item_id = item_id, rating = star)
 		db.session.add(rating)
@@ -100,7 +107,7 @@ def rate(key_id, star):
 		rate_object.rating = 0.4*rate_object.rating + 0.6*int(star)
 		db.session.commit()
 
-	rate_object = Ratings.query.filter_by(user_id=user_id, item_id=item_id).first()	
+	rate_object = Ratings.query.filter_by(user_id=user_id, item_id=item_id).first()
 	rate_object.times_bought += 1
 
 	flash('Your review has been successfully recorded','success')
@@ -126,7 +133,7 @@ def contact():
 def forgot_pass():
 	if current_user.is_authenticated:
 		return redirect(url_for('home'))
-	form = RequestResetForm()	
+	form = RequestResetForm()
 	if form.validate_on_submit():
 		user= User.query.filter_by(email=form.email.data).first()
 		send_reset_email(user)
@@ -168,4 +175,4 @@ def signup():
 @app.route('/logout')
 def logout():
 	logout_user()
-	return redirect(url_for('home')) 
+	return redirect(url_for('home'))
