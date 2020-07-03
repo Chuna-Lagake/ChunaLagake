@@ -7,10 +7,6 @@ from flask_mail import Message
 import numpy as np
 from chuna_lagake.build_recommendation import *
 
-if current_user.is_authenticated:
-	model, interactions, labels, item_features = train_model()
-
-
 def send_reset_email(user):
 	token = user.get_reset_token()
 	msg = Message('Password Reset Request', sender='chunalagake.official@gmail.com', recipients=[user.email])
@@ -31,6 +27,7 @@ def login():
 		user = User.query.filter_by(email=form.email.data).first()
 		if user and bcrypt.check_password_hash(user.password, form.password.data):
 			login_user(user, remember=form.remember.data)
+			model, interactions, labels, item_features = train_model()
 			return redirect(url_for('home'))
 		else:
 			flash('Login Unsuccessful. Please check email and password','danger')
