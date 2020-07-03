@@ -101,7 +101,7 @@ def sample_recommendation(model, data, labels, item_features, user_id):
 
 
 def convert_to_user_recommend(model, interactions, labels, item_features, user_id):
-    new_user_id = user_recommend.index(user_id))
+    new_user_id = user_recommend.index(user_id)
     list_of_recommendations = sample_recommendation(model, interactions, labels, item_features, new_user_id)
     return list_of_recommendations
 
