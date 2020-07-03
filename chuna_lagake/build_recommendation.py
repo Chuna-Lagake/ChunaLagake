@@ -90,10 +90,7 @@ def sample_recommendation(model, data, labels, item_features, user_ids):
     n_users, n_items = data.shape
     list_of_recommendations = []
     for user_id in user_ids:
-        known_positives = labels[data.tocsr()[user_id].indices]
-
         scores = model.predict(user_id, np.arange(n_items), item_features)
-
         top_items = labels[np.argsort(-scores)]
 
         for x in top_items[:5]:
