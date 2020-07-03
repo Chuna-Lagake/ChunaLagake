@@ -7,7 +7,8 @@ from flask_mail import Message
 import numpy as np
 from chuna_lagake.build_recommendation import *
 
-model, interactions, labels, item_features = train_model()
+if current_user.is_authenticated:
+	model, interactions, labels, item_features = train_model()
 
 
 def send_reset_email(user):
@@ -42,7 +43,7 @@ def products():
 	trending_items = [str(x+1) for x in num_bought[:5]]
 	
 	if current_user.is_authenticated:
-		if current_user.ratings not None :
+		if not current_user.ratings:
 			list_of_recommendations = convert_to_user_recommend(model, interactions, labels, item_features, [current_user.id])
 		else :
 			list_of_recommendations = trending_items
