@@ -40,7 +40,7 @@ def products():
 	for i in range(Menu.query.count()):
 		item = Menu.query.get(i+1)
 		num_bought.append(item.times_bought)
-	num_bought = np.argsort(-num_bought)
+	num_bought = np.argsort(num_bought)[::-1]
 	trending_items = [str(x+1) for x in num_bought[:5]]
 	
 	if current_user.is_authenticated:
