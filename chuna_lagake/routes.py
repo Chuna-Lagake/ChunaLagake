@@ -41,7 +41,7 @@ def products():
 	trending_items = [str(x+1) for x in num_bought[:5]]
 	
 	if current_user.is_authenticated:
-		if len(current_user.ratings) > 0 :
+		if len(current_user.ratings) == 0 :
 			list_of_recommendations = trending_items
 		else :
 			list_of_recommendations = convert_to_user_recommend(model, interactions, labels, item_features, [current_user.id])
