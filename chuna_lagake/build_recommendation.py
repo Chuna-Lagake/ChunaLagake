@@ -43,7 +43,7 @@ def get_data():
         else:
             rating_dict.update({"Recommend_ID":user_recommend.index(rating.user_id)})
         ratings.append(rating_dict)
-    print(user_recommend)
+    print('user_recommend:',user_recommend)
     return users, items, ratings
 
 def get_user_features():
@@ -86,22 +86,22 @@ def train_model():
     print("Model Trained Successfully.....")
     return model, interactions, labels, item_features
 
-def sample_recommendation(model, data, labels, item_features, user_ids):
+def sample_recommendation(model, data, labels, item_features, user_id):
     n_users, n_items = data.shape
     list_of_recommendations = []
-    for user_id in user_ids:
-        scores = model.predict(user_id, np.arange(n_items), item_features)
-        top_items = labels[np.argsort(-scores)]
+    scores = model.predict(user_id, np.arange(n_items), item_features)
+    top_items = labels[np.argsort(-scores)]
 
-        for x in top_items[:5]:
-            list_of_recommendations.append(x)
+    for x in top_items[:5]:
+        list_of_recommendations.append(x)
+    print('user_id:',user_id)
+    print('list_of_recommendations:', list_of_recommendations)
+    print('_____________________________')
     return list_of_recommendations
 
 
-def convert_to_user_recommend(model, interactions, labels, item_features, user_ids):
-    new_user_id = []
-    for user_id in user_ids:
-        new_user_id.append(user_recommend.index(user_id))
+def convert_to_user_recommend(model, interactions, labels, item_features, user_id):
+    new_user_id = user_recommend.index(user_id))
     list_of_recommendations = sample_recommendation(model, interactions, labels, item_features, new_user_id)
     return list_of_recommendations
 

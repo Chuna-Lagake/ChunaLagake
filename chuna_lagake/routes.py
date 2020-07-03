@@ -48,7 +48,7 @@ def products():
 			list_of_recommendations = trending_items
 		else :
 			model, interactions, labels, item_features = train_model()
-			list_of_recommendations = convert_to_user_recommend(model, interactions, labels, item_features, [current_user.id])
+			list_of_recommendations = convert_to_user_recommend(model, interactions, labels, item_features,current_user.id)
 			trending_items = [str(x+1) for x in num_bought[:5]]
 		return render_template('products.html', trending_items = trending_items, recommended_items = [str(x) for x in list_of_recommendations])
 	
