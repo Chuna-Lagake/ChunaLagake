@@ -79,7 +79,8 @@ def buy(key_id):
 
 	if current_user.is_authenticated:
 		return redirect(url_for('item', ratings=True, key_id=key_id))
-		item_object = Menu.query.get(item_id)
+		
+		item_object = Menu.query.get(key_id)
 		item_object.times_bought += 1
 	flash('You have to be logged in to buy items','warning')
 	return redirect(url_for('item', key_id = key_id))
