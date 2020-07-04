@@ -8,6 +8,7 @@ import numpy as np
 from chuna_lagake.build_recommendation import *
 
 flag = 0
+global_model, global_interactions, global_labels, global_item_features = train_model()
 
 def send_reset_email(user):
 	token = user.get_reset_token()
@@ -45,15 +46,16 @@ def products():
 	trending_items = [str(x+1) for x in num_bought[:10]]
 	
 	if current_user.is_authenticated:
-		global flag
+		global flag, global_interactions, global_item_features, global_labels, global_model
 		while flag % 5 ==  0 :
-			model, interactions, labels, item_features = train_model()
+			global_model, global_interactions, global_labels, global_item_features = train_model()
+			
 		flag += 1
 		print('flag==>', flag)
 		if len(current_user.ratings) == 0 :
 			list_of_recommendations = trending_items
 		else :
-			list_of_recommendations = convert_to_user_recommend(model, interactions, labels, item_features,current_user.id)
+			list_of_recommendations = convert_to_user_recommend(global_model, global_interactions, global_labels, global_item_features,current_user.id)
 			trending_items = [str(x+1) for x in num_bought[:10]]
 		return render_template('products.html', trending_items = trending_items, recommended_items = [str(x) for x in list_of_recommendations])
 	
