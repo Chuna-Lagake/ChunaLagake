@@ -46,10 +46,10 @@ def products():
 	
 	if current_user.is_authenticated:
 		global flag
-		while flag == 0 :
+		while flag % 5 ==  0 :
 			model, interactions, labels, item_features = train_model()
-			flag += 1
-			print('flag==>', flag)
+		flag += 1
+		print('flag==>', flag)
 		if len(current_user.ratings) == 0 :
 			list_of_recommendations = trending_items
 		else :
