@@ -44,7 +44,6 @@ def get_data():
         else:
             rating_dict.update({"Recommend_ID":user_recommend.index(rating.user_id)})
         ratings.append(rating_dict)
-    print('user_recommend:',user_recommend)
     return users, items, ratings
 
 def get_user_features():
@@ -95,7 +94,6 @@ def sample_recommendation(model, data, labels, item_features, user_id):
 
     for x in top_items[:10]:
         list_of_recommendations.append(x)
-    print('user_id:',user_id)
     print('list_of_recommendations:', list_of_recommendations)
     print('_____________________________')
     random.shuffle(list_of_recommendations)
