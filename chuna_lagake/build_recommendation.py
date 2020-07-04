@@ -98,7 +98,8 @@ def sample_recommendation(model, data, labels, item_features, user_id):
     print('user_id:',user_id)
     print('list_of_recommendations:', list_of_recommendations)
     print('_____________________________')
-    return random.shuffle(list_of_recommendations)
+    random.shuffle(list_of_recommendations)
+    return list_of_recommendations
 
 
 def convert_to_user_recommend(model, interactions, labels, item_features, user_id):

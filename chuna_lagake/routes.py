@@ -41,7 +41,7 @@ def products():
 		item = Menu.query.get(i+1)
 		num_bought.append(item.times_bought)
 	num_bought = np.argsort(num_bought)[::-1]
-	trending_items = [str(x+1) for x in num_bought[:5]]
+	trending_items = [str(x+1) for x in num_bought[:10]]
 	
 	if current_user.is_authenticated:
 		if len(current_user.ratings) == 0 :
