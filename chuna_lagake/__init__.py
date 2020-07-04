@@ -10,10 +10,10 @@ app.config['SECRET_KEY'] = 'c0e86bb97cf45f8f36c696128d94e3bd'
 
 #ENV = 'test'
 #if ENV == 'test':
-#     app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://postgres:Nilap@1234@localhost/ChunaLagake'
+#     app.config['SQLALCHEMY_DATABASE_URI'] = 'TEST_DATABASE_URI'
 #     app.debug = True
 #     pass
-app.config["SQLALCHEMY_DATABASE_URI"] = "postgres://krcpkqjstfskjv:7b5286aa792b9e323a6e343f435ad712648ba157e6cd00377d8eed783fab0949@ec2-52-200-119-0.compute-1.amazonaws.com:5432/dn3hh3d4lh1a0"
+# app.config["SQLALCHEMY_DATABASE_URI"] = "PRODUCTION_DATABASE_URI"
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 db = SQLAlchemy(app)
@@ -22,8 +22,8 @@ login_manager = LoginManager(app)
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 587
 app.config['MAIL_USE_TLS'] = True
-app.config['MAIL_USERNAME'] = "chunalagake.official@gmail.com"
-app.config['MAIL_PASSWORD'] = "paanwithshaan"
+app.config['MAIL_USERNAME'] = "USERNAME"
+app.config['MAIL_PASSWORD'] = "PASSWORD"
 mail = Mail(app)
 
 from chuna_lagake import routes
