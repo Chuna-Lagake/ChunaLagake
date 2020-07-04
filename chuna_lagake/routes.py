@@ -49,9 +49,9 @@ def products():
 		global flag, global_interactions, global_item_features, global_labels, global_model
 		while flag % 5 ==  0 :
 			global_model, global_interactions, global_labels, global_item_features = train_model()
+			flag += 1
+			print('flag==>', flag)
 			
-		flag += 1
-		print('flag==>', flag)
 		if len(current_user.ratings) == 0 :
 			list_of_recommendations = trending_items
 		else :
