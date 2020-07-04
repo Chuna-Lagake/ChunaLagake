@@ -11,7 +11,7 @@
 				{% with messages = get_flashed_messages(with_categories=true) %}
 				{% if messages %}
 				{% for category, message in messages %}
-					<div class="alert alert-{{category}}">	
+					<div class="alert alert-{{category}}">
 						{{message}}
 					</div>
 				{% endfor %}
@@ -47,7 +47,7 @@
 						{{form.email(placeholder="Email Id")}}
 					{% endif %}
 				{% endif %}
-				
+
 				{% if form.feedback.errors %}
 					{{form.feedback(placeholder="Feedback", class="is-invalid")}}
 					<div class="invalid-feedback">
@@ -84,9 +84,9 @@
 					</li>
 					<li>
 						<h3>Email:</h3>
-						<span>info@gmail.com</span>
+						<span>chunalagake.official@gmail.com</span>
 					</li>
 				</ul>
-			</div>	
+			</div>
 		</div>
 {% endblock content%}
