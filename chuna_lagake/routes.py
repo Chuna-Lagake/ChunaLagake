@@ -35,7 +35,7 @@ def login():
 	return render_template('login.html',form=form)
 
 @app.route('/products')
-def products(flag):
+def products():
 	
 	num_bought = []
 	for i in range(Menu.query.count()):
@@ -45,6 +45,7 @@ def products(flag):
 	trending_items = [str(x+1) for x in num_bought[:10]]
 	
 	if current_user.is_authenticated:
+		global flag
 		while flag == 0 :
 			model, interactions, labels, item_features = train_model()
 			flag += 1
