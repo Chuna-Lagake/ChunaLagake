@@ -53,7 +53,8 @@ def products():
 			global_model, global_interactions, global_labels, global_item_features = train_model()
 		
 		print('flag==>', flag)
-		flag +=1
+		flag += 1
+		flag = flag % 5
 
 		if len(current_user.ratings) == 0 :
 			list_of_recommendations = trending_items
