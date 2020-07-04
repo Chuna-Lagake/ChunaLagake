@@ -4,6 +4,7 @@ from lightfm.data import Dataset
 import numpy as np
 import os, csv, json
 from itertools import islice
+import random
 
 menu, users, items, ratings, user_recommend = [], [], [], [], []
 
@@ -92,12 +93,12 @@ def sample_recommendation(model, data, labels, item_features, user_id):
     scores = model.predict(user_id, np.arange(n_items), item_features)
     top_items = labels[np.argsort(-scores)]
 
-    for x in top_items[:5]:
+    for x in top_items[:10]:
         list_of_recommendations.append(x)
     print('user_id:',user_id)
     print('list_of_recommendations:', list_of_recommendations)
     print('_____________________________')
-    return list_of_recommendations
+    return random.shuffle(list_of_recommendations)
 
 
 def convert_to_user_recommend(model, interactions, labels, item_features, user_id):
