@@ -8,8 +8,8 @@ from flask_mail import Mail
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'c0e86bb97cf45f8f36c696128d94e3bd'
 
-ENV = 'test'
-# if ENV == 'test':
+#ENV = 'test'
+#if ENV == 'test':
 #     app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://postgres:Nilap@1234@localhost/ChunaLagake'
 #     app.debug = True
 #     pass

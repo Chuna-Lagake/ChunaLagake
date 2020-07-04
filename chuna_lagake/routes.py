@@ -37,32 +37,36 @@ def login():
 
 @app.route('/products')
 def products():
-	
+
 	num_bought = []
 	for i in range(Menu.query.count()):
 		item = Menu.query.get(i+1)
 		num_bought.append(item.times_bought)
 	num_bought = np.argsort(num_bought)[::-1]
 	trending_items = [str(x+1) for x in num_bought[:10]]
-	
+
 	if current_user.is_authenticated:
-		
+
 		global flag, global_interactions, global_item_features, global_labels, global_model
-		
+
 		if flag % 5 == 0:
 			global_model, global_interactions, global_labels, global_item_features = train_model()
-		
+
 		print('flag==>', flag)
 		flag += 1
 		flag = flag % 5
 
 		if len(current_user.ratings) == 0 :
 			list_of_recommendations = trending_items
+		elif len(current_user.ratings) == 1:
+			global_model, global_interactions, global_labels, global_item_features = train_model()
+			list_of_recommendations = convert_to_user_recommend(global_model, global_interactions, global_labels, global_item_features,current_user.id)
+			trending_items = [str(x+1) for x in num_bought[:10]]
 		else :
 			list_of_recommendations = convert_to_user_recommend(global_model, global_interactions, global_labels, global_item_features,current_user.id)
 			trending_items = [str(x+1) for x in num_bought[:10]]
 		return render_template('products.html', trending_items = trending_items, recommended_items = [str(x) for x in list_of_recommendations])
-	
+
 	return render_template('products.html', trending_items = trending_items)
 
 
