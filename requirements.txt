@@ -17,7 +17,7 @@ gunicorn==20.0.4
 idna==2.10
 itsdangerous==1.1.0
 Jinja2==2.11.2
-joblib==0.16.0
+joblib==1.2.0
 lightfm==1.15
 MarkupSafe==1.1.1
 numpy==1.18.5
